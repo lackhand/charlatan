@@ -1,4 +1,4 @@
-# Charlatan
+# [Charlatan](lackhand.github.io/charlatan)
 
 A fork of Knave (, er, and Maze Rats) for Vance-like and other ungentlemanly wizards.
 
