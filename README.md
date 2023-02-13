@@ -10,6 +10,15 @@ I owe a deep debt to [Ben Milton](https://questingbeast.itch.io/)'s [Maze Rats](
 
 In return, I release this content under the same license, referring to this product as `lackhand's Charlatan`.
 
+# Testbed for autoroll tables
+
+| 1d20 | Some results |
+|------|--------------|
+| 1-5  | Cry |
+| 6-10 | Moan |
+| 11-15 | Giggle |
+| 16-20 | Retch |
+
 # The Game
 
 ## Character Generation
@@ -118,3 +127,9 @@ Invent or roll the rest of your character's traits such as their physique, skin,
 | 20 | Tracker | Spy | x |
 
 
+<script
+  type="text/javascript">
+
+  alert("Hello world")
+
+</script>
