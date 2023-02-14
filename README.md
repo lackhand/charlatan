@@ -159,15 +159,16 @@ Invent or roll the rest of your character's traits such as their physique, skin,
         left = parseInt(left);
         let right = entry.substr(hyphenI+1).trim();
         right = parseInt(right);
+        return [left,right];
       }
       function concatenateRow(row, after=1) {
         let ret = row.getElementsByTagName("td");
         // Ignore leftmost column, the "odds" column.
-        ret = Array.prototype.filter(ret, (_,i)=>i>=1);
+        ret = Array.prototype.filter.call(ret, (_,i)=>i>=1);
         // Get the inner string
-        ret = Array.prototype.map(ret, x=>x.innerHTML);
+        ret = Array.prototype.map.call(ret, x=>x.innerHTML);
         // Throw away any inner cols
-        ret = Array.prototype.join(ret, "|");
+        ret = Array.prototype.join.call(ret, "|");
         return ret;
       }
       function makeRoller(table) {
@@ -177,8 +178,7 @@ Invent or roll the rest of your character's traits such as their physique, skin,
         const rolldiv = document.createElement("div")
         const rollbutton = document.createElement("button")
         rolldiv.appendChild(rollbutton)
-        const rollresult = document.createElement("span")
-        rolldiv.appendChild(rollresult)
+        
 
         let data = [];
         for (let row of table.getElementsByTagName("tr")) {
@@ -186,8 +186,9 @@ Invent or roll the rest of your character's traits such as their physique, skin,
           if (cols.length <= 0) continue;
           let minmax = parseEntry(cols[0].innerHTML)
           if (!minmax) continue;
-          data.append([minmax[0], minmax[1], row]);
+          data.push([minmax[0], minmax[1], row]);
         }
+        console.log(table, 'roller is', data);
             
         rollbutton.innerHTML = "Roll!";
         rollbutton.onclick = function() {
@@ -198,13 +199,14 @@ Invent or roll the rest of your character's traits such as their physique, skin,
               return;
             }
           }
-          rollbutton.innerHTML(`No match for ${value}`);
+          rollbutton.innerHTML = `No match for ${value}`;
         }
+        return rolldiv
       }
     
       (function onLoad() {
         const tables = document.getElementsByTagName("table")
-        for (let table of document.getElementsByTagName("table")) {
+        for (let table of tables) {
           const rolldiv = makeRoller(table);
           table.parentNode.insertBefore(rolldiv, table);
         }
