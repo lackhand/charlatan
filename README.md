@@ -127,9 +127,90 @@ Invent or roll the rest of your character's traits such as their physique, skin,
 | 20 | Tracker | Spy | x |
 
 
-<script
-  type="text/javascript">
 
-  alert("Hello world")
+<details>
 
-</script>
+  <summary>Infrastructure (README hides!)</summary>
+  
+  <script
+    type="text/javascript">
+    (function() {
+      function rnd(min=1, max=20) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      const knownDice = {
+        'd6': () => rnd(1, 6),
+        'd20': () => rnd(1, 20),
+        '1d20': () => rnd(1, 20),
+        '1d6': () => rnd(1, 6),
+      };
+      function parseDice(expr) {
+        return knownDice[expr.trim()];
+      }
+      function parseEntry(entry) {
+        entry = entry.trim();
+        let hyphenI = entry.indexOf('-');
+        if (hyphenI < 0) {
+          let value = parseInt(entry);
+          if (isNaN(value)) return null;
+          return [value, value];
+        }
+        let left = entry.substr(0, hyphenI).trim();
+        left = parseInt(left);
+        let right = entry.substr(hyphenI+1).trim();
+        right = parseInt(right);
+      }
+      function concatenateRow(row, after=1) {
+        let ret = row.getElementsByTagName("td");
+        // Ignore leftmost column, the "odds" column.
+        ret = Array.prototype.filter(ret, (_,i)=>i>=1);
+        // Get the inner string
+        ret = Array.prototype.map(ret, x=>x.innerHTML);
+        // Throw away any inner cols
+        ret = Array.prototype.join(ret, "|");
+        return ret;
+      }
+      function makeRoller(table) {
+        let dice = parseDice(table.getElementsByTagName("th")[0].innerHTML)
+        if (!dice) return null;
+
+        const rolldiv = document.createElement("div")
+        const rollbutton = document.createElement("button")
+        rolldiv.appendChild(rollbutton)
+        const rollresult = document.createElement("span")
+        rolldiv.appendChild(rollresult)
+
+        let data = [];
+        for (let row of table.getElementsByTagName("tr")) {
+          let cols = row.getElementsByTagName("td");
+          if (cols.length <= 0) continue;
+          let minmax = parseEntry(cols[0].innerHTML)
+          if (!minmax) continue;
+          data.append([minmax[0], minmax[1], row]);
+        }
+            
+        rollbutton.innerHTML = "Roll!";
+        rollbutton.onclick = function() {
+          let value = dice();
+          for (let [min, max, row] of data) {
+            if (min <= value && value <= max) {
+              rollbutton.innerHTML = `${value}: ${concatenateRow(row)}`;
+              return;
+            }
+          }
+          rollbutton.innerHTML(`No match for ${value}`);
+        }
+      }
+    
+      (function onLoad() {
+        const tables = document.getElementsByTagName("table")
+        for (let table of document.getElementsByTagName("table")) {
+          const rolldiv = makeRoller(table);
+          table.parentNode.insertBefore(rolldiv, table);
+        }
+      })();
+
+    })()
+  </script>
+
+</details>
