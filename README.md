@@ -161,54 +161,63 @@ Invent or roll the rest of your character's traits such as their physique, skin,
         right = parseInt(right);
         return [left,right];
       }
-      function concatenateRow(row, after=1) {
-        let ret = row.getElementsByTagName("td");
-        // Ignore leftmost column, the "odds" column.
-        ret = Array.prototype.filter.call(ret, (_,i)=>i>=1);
-        // Get the inner string
-        ret = Array.prototype.map.call(ret, x=>x.innerHTML);
-        // Throw away any inner cols
-        ret = Array.prototype.join.call(ret, "|");
-        return ret;
-      }
-      function makeRoller(table) {
-        let dice = parseDice(table.getElementsByTagName("th")[0].innerHTML)
-        if (!dice) return null;
 
-        const rolldiv = document.createElement("div")
-        const rollbutton = document.createElement("button")
-        rolldiv.appendChild(rollbutton)
-        
+      function makeRoller(table, index=1, oddsCol=0) {
+        const headings = table.getElementsByTagName("th");
+        const dice = parseDice(headings[oddsCol].innerHTML);
+        if (!dice) return null;
 
         let data = [];
         for (let row of table.getElementsByTagName("tr")) {
           let cols = row.getElementsByTagName("td");
           if (cols.length <= 0) continue;
-          let minmax = parseEntry(cols[0].innerHTML)
+          let minmax = parseEntry(cols[oddsCol].innerHTML)
           if (!minmax) continue;
-          data.push([minmax[0], minmax[1], row]);
+          data.push([minmax[0], minmax[1], cols[index].innerHTML]);
         }
-        console.log(table, 'roller is', data);
-            
-        rollbutton.innerHTML = "Roll!";
-        rollbutton.onclick = function() {
-          let value = dice();
-          for (let [min, max, row] of data) {
-            if (min <= value && value <= max) {
-              rollbutton.innerHTML = `${value}: ${concatenateRow(row)}`;
-              return;
+        return function() {
+          let roll = dice();
+          for (let [min, max, value] of data) {
+            if (min <= roll && roll <= max) {
+              return `${roll}: ${value}`;
             }
           }
-          rollbutton.innerHTML = `No match for ${value}`;
+          return `No match for ${value}`;
+        };
+      }
+      function insertRollers(table) {
+        const headings = table.getElementsByTagName("th");
+        for (let i = 1; i < headings.length; ++i) {
+          const roller = makeRoller(table, i);
+          if (!roller) {
+            console.log("Can't make roller for", table, i, "=", headings[i]);
+            continue;
+          }
+
+          let title = headings[i].firstChild;
+          if (title.nodeType != Node.TEXT_NODE) {
+            console.log("Unsuitable title type", table, i, "=", title);
+            continue;
+          }
+          title = title.data;
+
+          headings[i].innerHTML = '';
+          headings[i].name = title;
+          headings[i].roller = roller;
+
+          const rollbutton = document.createElement("button");
+          rollbutton.innerHTML = title;
+          rollbutton.onclick = function() {
+            this.innerHTML = `${title}<br/>${roller()}`;
+          };
+          headings[i].append(rollbutton);
         }
-        return rolldiv
       }
     
       (function onLoad() {
         const tables = document.getElementsByTagName("table")
         for (let table of tables) {
-          const rolldiv = makeRoller(table);
-          table.parentNode.insertBefore(rolldiv, table);
+          insertRollers(table);
         }
       })();
 
