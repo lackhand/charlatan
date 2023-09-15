@@ -1,26 +1,27 @@
 # dice & danger
 
-A simple hack of old school dungeon crawling games based off of competent heroes and terrifying danger.
+A simple hack of old school dungeon crawling games in the veins of Into the Odd and many other hacks.
 
-# This is a d6-based old skool RPG
+# This is a d6-based old/nü skool RPG
 
 * There is a DM and the rest of you are Players with Player Characters
-* Player Characters have a slot-based inventory and things like:
-* several Titles (text describing true things about yourself and the world)
-* Attributes (which represent your resistance to various forms of peril)
-* a Level (a measure of experience and power)
-* a yen for treasure and for danger
+* You'll want about 8 six sided dice per player, pencils, paper, etc.
+* The characters have:
+  * Slot-based inventory & conditions
+  * Attribute scores from 1-6
+  * Levels, Level Titles & hit dice
+  * a yen for treasure and for danger
 
 Have fun!
 
 # Dice always represent Danger
 
-An individual die that rolls a high value *hits*; sometimes we say dice that show a low value miss (but technically they just don't count at all).
+An individual die that rolls a high value *hits*; sometimes we say dice that show a low value miss (but technically they just vanish).
 
 Players roll _damage_ to discover how well their attack against someone else goes. Each hit deals damage (yay).
 Players roll _saves_ to discover how well they avoid someone else's attack. Each hit deals damage (boo).
 Players roll all of the dice (except for like the DM rolling on tables I guess).
-If one player tries to damage another, let the one who's _saving_ roll (it's just polite).
+If one player tries to damage another, let the one who is _saving_ roll (it's just polite).
 
 This doesn't have to be literal;
 sometimes a _damage roll_ counts progress on a long term project. 
@@ -29,25 +30,26 @@ It's all the same mechanic: hits from a roll represent change in status quo.
 
 ### Dice Notation
 
-(This example is intentionally gnarly.)
+(This example is intentionally gnarly. I haven't gone back to edit it based on what the actual rules are.)
 
-> Player: My knight attacks the goblin from ambush with my goblinbane greatsword and favored enmity despite my fatigue and blindness.  
+> Player: My knight attacks the goblin from ambush with my goblinbane greatsword and favored enmity despite my fatigue, blindness, and injury.  
 > DM: Ah, but did you consider that the goblin was itself a sneaky ninja who had drunk a potion of stoneskin?
 > DM: Please roll your damage!  
 > Player: Ok, I roll:  
->     3d +2d +1b +3b +2p +2p vs DC 3 & -1d & +2b  
+>     4d &2d &1b &3b &2p &2p &1q vs DC 3 &1d &2b  
 > That is:  
-> * `3d`: Roll a at 3 base **dice** (because I'm _acting_, and _prepared_, and _equipped_)
-> * `+2d`: And then 2 more **dice** (because goblinbane greatsword, baybee) -- 5d! woo!
-> * `+1b`: And then 1 more **bonus dice** because of Favored enmity; I roll one _more_ dice and discard one of my choice (the lowest)...
-> * `+3b`: ... and because that goblin is _surprised_ I roll & discard 3 more bonus dice...
-> * `+1p`: ... but stupid fatigue; roll 2 **penalty dice** but discard the _highest_...
-> * `+2p`: ... and stupid blindess; total 4 _bonus_ and 3 _penalty_ dice; they cancel before the roll, so I'll just roll at +1b.
-> * `vs DC 3`: The goblin's wearing hide armor or something, right? (DM: Yeah!) So any dice that shows a 3, 4, 5 or 6 is a hit. (DM: Yeah!)
-> * `& -1d`: Ugh. This discards a base **dice** from my pool?! (DM: Yeah :-3)
-> * `& +2b`: Wait, do I get these dice? (DM: No, the goblin is a ninja; they're _its_ bonus dice. They're _penalty dice for your roll_.) Ugh. Ok. So total, I'm rolling total at +1p now from my earlier +1b.
+> * `4d`: Roll a at 4 base **dice** (because I'm that good)
+> * `&2d`: And then 2 more **dice** (because goblinbane greatsword, baybee) -- 6d! woo!
+> * `&1b`: And then 1 more **bonus dice** because of Favored enmity; I roll one _more_ dice and discard one of my choice (the lowest)...
+> * `&3b`: ... and because that goblin is _surprised_ I roll & discard 3 more bonus dice...
+> * `&1p`: ... but stupid fatigue; roll 2 **penalty dice** but discard the _highest_...
+> * `&2p`: ... and stupid blindess; total 4 _bonus_ and 3 _penalty_ dice; they cancel before the roll, so I'll just roll at &1b.
+> * `&1q`: ... and stupid injury. That makes me **quit** 1 of my base dice off the top (they cancel). 5d.
+> * `vs DC 3`: The goblin's wearing hide armor or something, right? (DM: Yeah!) So any dice that shows a 3 or higher is a hit. (DM: Yeah!)
+> * `&1d`: I get a bonus dice? (DM: No, it's the goblin's bonus dice, it's `&1q` for you!) UGH. 4d. Fine.
+> * `&2b`: This is the same idea, `&2p` for me? (DM: Yeah :-3). So total, I'm rolling total at &1p now from my earlier &1b.
 > Anyway, that's all crazy, but that simplifies out to
->    4d-1p vs DC 3
+>    4d&1p vs DC 3
 > That was really long! But I guess I had to show my work. Anyway, I rolled...
 >    [1, 2, 4, 5, 6]
 > but since one of those was the penalty die, I throw out the highest die (`6`).
@@ -59,21 +61,25 @@ It's all the same mechanic: hits from a roll represent change in status quo.
 > Roll more dice at +1d.
 > That keeps happening as long as you roll a 6.
 > That's called a crit.
+>
+> DM: And you never need to pick up more than 8 cubes (before explosions).
+> If you would, `&6q` and pretend they rolled `[1, 2, 3, 4, 5, 6]` (that 6 explodes!).
 
-### What's the DC? How many dice?
+### What's the Difficulty Class? How many dice?
 
-It's always a value from 2 to 6.
-If it would be lower, give +1d; higher, give -1d.
+> If you have to roll 0d or fewer, you get no successes.
+> If you have to roll 8 cubes or more, roll 2 cubes or more and assume the other six rolled `[1, 2, 3, 4, 5, 6]` (which can explode).
+> If the DC is 1, make it DC 2&1q. DC 0 is DC 2&2q.
+> If the DC is 6, make it DC 5&1d. DC 7 is DC 5&2d.
 
-When you're rolling a save, it's one of your attributes, and they'll supply the base dice to roll.
-When you're rolling damage, it's your _target's_ attributes; you get:
-* 1d for acting
-* +1d if you're an expert (you have a relevant title)
-* +1d if you're prepared (you have the relevant equipment)
-* +1d if a friend helps and spends a HD
-* +1p if you spend a HD
+Whoever is rolling (it's always a player; if the roll just concerns two players let the defender roll) picks up 1d per point of the attacker's attribute, and the DC is the defender's attribute.
+The defender's extra dice are interpreted "backwards"; a defender's `&2b` would roll 2 more dice and discard the _highest_ (just like the attacker's `&2p` would!), and the defender's `&1q` adds 1 extra die to the pool (just like the attacker's `&1d`!).
 
-But you'll doubtlessly modify the dice pool with more dice, bonus and penalty dice, extra or removed hits, and so on.
+Then roll, and count hits.
+
+The attacker generally picks up 1d per point in an attribute.
+The DC is set by the defender, DC 1 per point in an attribute.
+The number of hits are subtracted from hit points, or inflict conditions. Some attacks inflict conditions even if everything misses.
 
 # The Attributes
 
