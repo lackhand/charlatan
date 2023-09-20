@@ -5,8 +5,8 @@ A simple hack of old school dungeon crawling games in the vein of Into the Odd a
 # This is a d6-based DIY elfgame
 
 * There is a DM and the rest of you are Players with Player Characters
-* You'll want about 8 six sided dice per player, pencils, paper, etc.
- * The core mechanic is to roll a die and compare them to a target number.
+* You'll want about 4 six sided dice per player; pencils, paper, etc.
+ * The core mechanic is to roll a pool of dice and count the value and number of results.
 * The characters have:
   * A level (starts at 1) which gives you per-level Titles & hit dice
   * Slot-based inventory & conditions
@@ -15,6 +15,120 @@ A simple hack of old school dungeon crawling games in the vein of Into the Odd a
 
 Have fun!
 
+# Players roll the dice to determine damage
+
+The damage _source_ sets the number of six-sided dice of **d**amage, like 1d or 4d.
+Fists are 0d, knives 1d, swords 2d, and greatswords 3d.
+
+The damage _recipient_ specifies which values of dice to **k**eep, like K5 or K3.
+K6 is very fragile (keep every dice regardless of value), a little better is K5 (keep 1-5, discard 6), amazingly well defended is K2 (keep 1s & 2s, discard 3-6) and impossible to damage is K0 (discard all dice values). 
+
+Normally the player rolls the dice, notes the highest value under the KN, and declares that value: A *hit 5* if the highest dice showed a 5.
+* If the diepool was 0d, she rolls 2 dice and then keeps 1 of the defender's choice. -2d? Roll 4d keep 1.
+* If any dice in the diepool tie the KN, that's a crit (which is also a hit, and explodes). The value of a crit isn't the value on the dice; it's the number of dice which exploded.
+  > Alice rolls `[1,2,5,5,6]` against Boblin the Goblin's K5, scoring a crit 2.
+  > She rerolls the fives and gets [5, 6] raising it to a crit 3.
+  > She rerolls _that_ five and gets a [2].
+  > It was a total of a crit 3.
+
+# Characters start randomized and grow through play
+
+Your starting character is Level 1, has 1 **H**it **D**efense, 0 Cast, and needs some further numerical statistics.
+
+Roll the lowest of 3d for each of the stats in order, then switch 2 (if you want):
+* Strength: Resist paralysis, obstacles, impediments, or melee blows.
+* Reflex: Resist missiles, blasts, surprises, and detection.
+* Intelligence: Resist confusion, amnesia, distraction or hesitation.
+* Will: Resist fear, compulsion, magical or social attacks.
+* Health: Resist poison, fatigue, and death. Carry more.
+
+Each statistic also defines a defense, the KN of 7-this value.
+* A strength of 1 has a KN of 6; a health of 3 has a KN of 4.
+
+Now define your **Luck**, which works like your other statistics but is calculated differently.
+Sum the other statistics and compare:
+
+| Sum | Attribute | Defense |
+|-----|------|---|
+| 0-1 | 7    | 0 |
+| 2-3 | 6    | 1 |
+| 4-6 | 5    | 2 |
+| 7-10 | 4   | 3 |
+| 11-15 | 3  | 4 |
+| 16-21 | 2  | 5 |
+| 22-28 | 1  | 6 |
+| 29-36 | 0  | 7 |
+| 37+ | -1   | 7 |
+
+# Improvements
+At every level (including 1st), you get a Level Up point. Once during each session, you can attempt to spend it:
+* Improve HD: roll 1d and match-or-roll-over your HD. Spend your Level Up & increase HD by 1
+* Improve Cast: roll 1d and match-or-roll-over your Cast. Spend your Level Up & increase Cast by 1.
+* Improve Item: roll 1d and match-or-roll-over Uses of an item. Spend your Level Up & increase Uses by 1.
+* Claim Title: Write down a mighty deed you just accomplished. It's the kind of thing you're good at. If you have any, you can remove a scar.
+
+At every tier (level 1, 3, 6, 10, 15, 21), you get a Tier Up point. Once during each session, you can attempt to spend it:
+* Attacks: Roll 1d and match-or-over times you've used this. Spend your Tier Up & increase danger from a kind of attack (melee, ranged, spells, etc) by 1d.
+* Skills: Roll 1d and match-or-over times you've used this. Spend your Tier Up & become +1 Expert in a Background you already had, or take a new background.
+* Stat: Roll 1d and match-or-over a stat. Spend your Tier Up & increase the stat by 1 (and the defense decreases by 1 as well, improving).
+* Slot: Roll 1d and match-or-over the number of times you've used this. Spend your Tier Up & increase slots by 1.
+
+## Backgrounds
+Consult your highest stat (roll or choose if a tie) & Luck to determine a background:
+
+| Highest Stat | Luck | Background |
+|---|---|---|
+| Health | 0-1 | Slave |
+| Health | 2-3 | Beggar |
+| Health | 4-6 | Barbarian |
+| Instinct | 0-1 | Dancer |
+| Instinct | 2-3 | Jester |
+| Instinct | 4-6 | Thief |
+| Strength | 0-1 | Squire |
+| Strength | 2-3 | Guard |
+| Strength | 4-6 | Soldier |
+| Intelligence | 0-1 | Hermit |
+| Intelligence | 2-3 | Guildsman |
+| Intelligence | 4-6 | Scholar |
+| Will | 0-1 | Bard |
+| Will | 2-3 | Noble |
+| Will | 4-6 | Priest |
+| Luck | 0-6 | Nomad |
+
+## Starting Items
+Roll 3d against your Luck Defense:
+* Keep 3: No armor
+* Keep 2: leather
+* Keep 1: scale
+* Keep 0: chain
+
+Choose two:
+* A 2-handed melee weapon or heavy ranged weapon
+* A 1-handed melee weapon or light weapon
+* Two light melee weapons
+* A shield
+* A wand
+
+Roll 4 times on A, B, or C (your choice).
+* If you don't have any light sources, you can trade any item for "torches (3)".
+* If you don't have any food, you can trade any item for "rations (3)".
+
+| A | Dungeoneering Items |
+|---|---|
+| 1 | Lantern & may trade for oil |
+| 2 | Oil (3) |
+| 3 | ... |
+
+| B | Common Items |
+|---|---|
+| 1 | Rations (3) |
+| 2 | Garlic (3) |
+| 3 | Salt (3) |
+
+| C | Uncommon Items |
+|---|---|
+| 1 | Mercury (1) |
+| 2 | Salve (1) |
 # Your Character
 
 Randomly generate your character's attributes, equipment, and details, and then start playing!
