@@ -6,259 +6,171 @@ A simple hack of old school dungeon crawling games in the vein of Into the Odd a
 
 * There is a DM and the rest of you are Players with Player Characters
 * You'll want about 4 six sided dice per player; pencils, paper, etc.
- * The core mechanic is to roll a pool of dice and count the value and number of results.
+ * The core mechanic is to roll a pool of dice, keeping the highest, with exploding crits.
 * The characters have:
-  * A level (starts at 1) which gives you per-level Titles & hit dice
-  * Slot-based inventory & conditions
-  * Attribute scores usually from 0 to 6
-  * A yen for treasure (which gives experience) and for danger
+  * A level (starts at 1) & random attribute scores (in the range 1-6)
+  * Slot-based inventory which doubles for fatigue, injury, and so on
+  * A yen for treasure (which gives experience) and for danger (which might kill them)
 
 Have fun!
 
 # Players roll the dice to determine damage
 
 The damage _source_ sets the number of six-sided dice of **d**amage, like 1d or 4d.
-Fists are 0d, knives 1d, swords 2d, and greatswords 3d.
+> For instance, shortswords are 1d, longswords are 2d, and polearms 3d.
 
-The damage _recipient_ specifies which values of dice to **k**eep, like K5 or K3.
-K6 is very fragile (keep every dice regardless of value), a little better is K5 (keep 1-5, discard 6), amazingly well defended is K2 (keep 1s & 2s, discard 3-6) and impossible to damage is K0 (discard all dice values). 
+The damage _recipient_ specifies which face-values of dice to **D**is**C**ard, like DC2 or DC4.
+> DC1 or lower is very fragile since it keeps every dice value.
+> DC3 keeps 3s, 4s, 5s, and 6s (discarding 1s and 2s).
+> DC5 keeps 5s and 6s (discarding 1-4).
 
-Normally the player rolls the dice, notes the highest value under the KN, and declares that value: A *hit 5* if the highest dice showed a 5.
-* If the diepool was 0d, she rolls 2 dice and then keeps 1 of the defender's choice. -2d? Roll 4d keep 1.
-* If any dice in the diepool tie the KN, that's a crit (which is also a hit, and explodes). The value of a crit isn't the value on the dice; it's the number of dice which exploded.
-  > Alice rolls `[1,2,5,5,6]` against Boblin the Goblin's K5, scoring a crit 2.
-  > She rerolls the fives and gets [5, 6] raising it to a crit 3.
-  > She rerolls _that_ five and gets a [2].
-  > It was a total of a crit 3.
+Dice showing values above the DC are **hits**. Announce the number of dice that hit as a **hit number**.
+> Alice rolls 3d and gets `[1, 3, 5]` vs DC3.
+> She **hits** with the `[3, 5]` and announces the count of dice that hit --  a **hit 2**.
+
+Damage dice that show a 6 are **crits** and explode (roll an additional die, exploding any new crits).
+Some rolls don't allow crits, and will say so.
+> Bob rolls 7d and gets `[1, 2, 3, 4, 6, 6, 6] vs DC3.
+> He hit with the `[3, 4]` and crit with the `[6, 6, 6]` -- a _hit 2 crit 3_ (so far!).
+> He rerolls 3d and gets `[2, 4, 6]` -- a _hit 3 crit 4_ so far.
+> He rerolls the new 1d that hasn't exploded yet and gets `[4]` -- a total of **hit 8**.
+
+## Impossible rolls
+
+Sometimes you need to roll fewer than 1d, like 0d or -1d.
+When you roll 0d, roll 2d and pick the lowest die (leading to a smaller hit).
+Do the same thing with one additional die for each number below 0.
+> Alice rolls a saving throw against a rat bite at -1d vs DC2.
+> She rolls and picks the least-damaging result of [1, 4, 6].
+> The 6 _would be_ a crit and explode, but that 1 makes it a complete _miss_.
+
+Sometimes the roll is impossible because it would need to beat a DC greater than 6.
+When that happens, set the DC to 6 and discard the difference in dice before the roll.
+> Bob has a _shield +2_ and _fullplate +3_, is benefitting from _stoneskin_ and _haste_ and _shield of faith_, is _parrying_, and so forth.
+> He's got DC12.
+> Alice, however, has an _epic ballista of bobslaying_ and what with one thing and another is rolling 10d.
+> Resolve this as 4d vs DC6.
+
+It's ok for the DC to be 1 or lower (that just means everything hits).
+
+If you would otherwise roll 9d or more, assume every 6d roll `[1,2,3,4,5,6]` and roll for the remainder.
+This is necessarily at least one crit.
 
 # Characters start randomized and grow through play
 
-Your starting character is Level 1, has 1 **H**it **D**efense, 0 Cast, and needs some further numerical statistics.
+In order to start playing quickly, randomize almost about your character and discover who they are through play.
 
-Roll the lowest of 3d for each of the stats in order, then switch 2 (if you want):
-* Strength: Resist paralysis, obstacles, impediments, or melee blows.
-* Reflex: Resist missiles, blasts, surprises, and detection.
-* Intelligence: Resist confusion, amnesia, distraction or hesitation.
-* Will: Resist fear, compulsion, magical or social attacks.
-* Health: Resist poison, fatigue, and death. Carry more.
+## Attributes
 
-Each statistic also defines a defense, the KN of 7-this value.
-* A strength of 1 has a KN of 6; a health of 3 has a KN of 4.
+Roll 3d vs DC 4 (don't explode) for each attribute in order, then switch 2 (if you want):
+* **Strength:** Resist paralysis, obstacles, impediments, or melee blows; power through.
+* **Reflex:** Resist missiles, blasts, surprises, and detection; evade or become aware.
+* **Intelligence:** Resist confusion, amnesia, distraction or hesitation; know how to do something.
+* **Will:** Resist fear, compulsion, magical or social attacks; convince or resist.
+* **Health:** Resist poison, fatigue, transformation, and death; Carry more & carry on.
 
-Now define your **Luck**, which works like your other statistics but is calculated differently.
-Sum the other statistics and compare:
+Define your **Luck**, which works like your other statistics but is calculated by summing the other 5 statistics and checking the below table.
+* **Luck:** Starting social standing, avoid scars, improve your character's abilities.
+  * For every attribute equal to 0, increase your luck by 1.
+  * For every attributes equal to 1, increase your luck by 1/2.
+  * For every attribute equal to 2, increase your luck by 1/3.
+  * Round down.
+> Starting luck ranges from 0->5; 30% of characters start with luck 1, and 60% luck 2.
 
-| Sum | Attribute | Defense |
-|-----|------|---|
-| 0-1 | 7    | 0 |
-| 2-3 | 6    | 1 |
-| 4-6 | 5    | 2 |
-| 7-10 | 4   | 3 |
-| 11-15 | 3  | 4 |
-| 16-21 | 2  | 5 |
-| 22-28 | 1  | 6 |
-| 29-36 | 0  | 7 |
-| 37+ | -1   | 7 |
+# Levels, Experience, Titles & Tiers.
 
-# Improvements
-At every level (including 1st), you get a Level Up point. Once during each session, you can attempt to spend it:
-* Improve HD: roll 1d and match-or-roll-over your HD. Spend your Level Up & increase HD by 1
-* Improve Cast: roll 1d and match-or-roll-over your Cast. Spend your Level Up & increase Cast by 1.
-* Improve Item: roll 1d and match-or-roll-over Uses of an item. Spend your Level Up & increase Uses by 1.
-* Claim Title: Write down a mighty deed you just accomplished. It's the kind of thing you're good at. If you have any, you can remove a scar.
+Your starting character is **Level 1** with 0 e**X**perience **P**oints.
+You have 1 **H**it **D**ice which you use to determine **H**it **P**oints.
+You have 0 **C**ast **D**ice which you use to determine **C**ast **P**oints.
 
-At every tier (level 1, 3, 6, 10, 15, 21), you get a Tier Up point. Once during each session, you can attempt to spend it:
-* Attacks: Roll 1d and match-or-over times you've used this. Spend your Tier Up & increase danger from a kind of attack (melee, ranged, spells, etc) by 1d.
-* Skills: Roll 1d and match-or-over times you've used this. Spend your Tier Up & become +1 Expert in a Background you already had, or take a new background.
-* Stat: Roll 1d and match-or-over a stat. Spend your Tier Up & increase the stat by 1 (and the defense decreases by 1 as well, improving).
-* Slot: Roll 1d and match-or-over the number of times you've used this. Spend your Tier Up & increase slots by 1.
+> A more ethereal character like a wizard, fairy, or goblin might begin with 0 HD and 1 CD.
+
+Select a **Background Title** based on your **highest attribute** (if several are tied, you can choose one) and your **luck score**:
+
+| ... | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| Strength (Warrior) | Barbarian | Gladiator | Guard/Soldier | Squire | Knight |
+| Reflex (Hunter) | Ratcatcher | Thief | Scout/Outlaw | Ranger | Spy | 
+| Health (Laborer) | Farmer | Sailor | Cook/Poisoner | Merchant | Armorer |
+| Intelligence (Expert) | Tinker/Tailor | Artisan | Architect/Engineer | Herbalist | Alchemist |
+| Will (Adept) | Hermit/Monk | Herald | Sorcerer | Witch | Priest |
+| Luck (Noble) | Beggar | Traveler | Scribe | Entertainer | Prince |
+
+Pick other titles for your **nationality**, **race**, **appearance**, **alignment**, or **creed** (whatever you're using in the game).
+> Alice's character has a high reflex and middling luck, so she was a _scout_. She decides her character is English (and human), a stout & ruddy Protestant Kingswoman of Leeds.
+> Bob's character has a high will and low luck, and so he was a _herald_. He decides his character is an enigmatic faerie Envoy from the Thistledowns, armed in fish-scales and here to ensure the Pretender claims the throne of Wales.
+
+## Level up and spending Luck
+Every level requires 1000 more experience points than the level before it did and resets your experience points to 0.
+Whenever you level up, increase your luck by 1.
+You can permanently spend luck during play for one of the following:
+* Improve Hit Dice: When you roll hit points if all of the dice are 1, choose to spend 1 luck to increase HD by 1 and reroll.
+* Improve Cast Dice: When you roll cast points if all of the dice are 1, choose to spend 1 luck to increase CD by 1 and reroll.
+* Improve an Item: When you mark the last Use of an item, choose to spend 1 luck to give the item 1 more Use and a new Title (always succeeds).
+* Claim Title: When something impressive happens, choose to spend 1 luck to gain a new Title (always succeeds).
+
+Every time your level crosses a triangular number (1, 3, 6, 10, 15, 21, etc), your personal power level increases and you're ready to face a new level of challenge:
+| Level | Tier | Tier Title |
+|---|---|---|
+| 0 | 0 | Initiate |
+| 1 | 1 | Novice |
+| 2-3 | 2 | Apprentice |
+| 4-6 | 3 | Journeyman |
+| 7-10 | 4 | Master |
+| 11-15 | 5 | Grandmaster |
+| 16-21 | 6 | Champion |
+| 22+ | 7+ | Demigod+ (etc) |
+
+When you get a new Tier Title, you can improve one of your character's statistics automatically:
+* +1d to melee attacks (or ranged attacks, or damage from spells, etc etc)
+* +1d to casting evocations (or illusions, or benisons, etc etc)
+* Improve a stat: +1 to one of your character's statistics.
+* Slot: Get 1 more inventory slot.
 
 ## Backgrounds
 Consult your highest stat (roll or choose if a tie) & Luck to determine a background:
 
-| Highest Stat | Luck | Background |
-|---|---|---|
-| Health | 0-1 | Slave |
-| Health | 2-3 | Beggar |
-| Health | 4-6 | Barbarian |
-| Instinct | 0-1 | Dancer |
-| Instinct | 2-3 | Jester |
-| Instinct | 4-6 | Thief |
-| Strength | 0-1 | Squire |
-| Strength | 2-3 | Guard |
-| Strength | 4-6 | Soldier |
-| Intelligence | 0-1 | Hermit |
-| Intelligence | 2-3 | Guildsman |
-| Intelligence | 4-6 | Scholar |
-| Will | 0-1 | Bard |
-| Will | 2-3 | Noble |
-| Will | 4-6 | Priest |
-| Luck | 0-6 | Nomad |
-
 ## Starting Items
-Roll 3d against your Luck Defense:
-* Keep 3: No armor
-* Keep 2: leather
-* Keep 1: scale
-* Keep 0: chain
 
-Choose two:
-* A 2-handed melee weapon or heavy ranged weapon
-* A 1-handed melee weapon or light weapon
-* Two light melee weapons
-* A shield
-* A wand
+Choose 2 columns below and roll 1d per point of Luck (can crit!) vs DC 4:
+
+| Hits | Armor | Spells |
+|---|---|---|
+| 0 | None | None |
+| 1 | Leather | 1 Spell |
+| 2 | Scale | 2 Spells |
+| 3 | Chain | 3 Spells |
+| 4+ | Half plate | 4 Spells |
+
+### Weapons and Armor
+
+| Class | Slots | Damage | Examples | Notes |
+|---|---|---|---|---|
+| V. Light Melee | 1 | 0d | Dagger, club, whip | |
+| Light Melee | 1 | 1d | Shortsword, hatchet, mace | |
+| Crude Melee | 2 | 1d | Staff | |
+| Heavy Melee | 2 | 2d | Longsword, battleax, flail, spear | |
+| V. Heavy Melee | 3 | 3d | Halberd, greatsword, maul, lance | |
+| Small Shield | 1 | - | Buckler, targe, round wooden | Improve armor by 1. |
+| Large Shield | 2 | - | Kite, tower, large steel | Improve armor by 2. |
+| Ammunition (3) | 1 | - | Stones, arrows, bolts, etc. |
+| V. Light Ranged | 0 | 0d | Sling, hand crossbow | Requires Ammunition |
+| V. Light Thrown (3) | 0 | 0d | Darts | Requires Ammunition |
+| Light Ranged | 1 | 1d | Shortbow, light crossbow | Requires Ammunition |
+| Heavy Ranged | 2 | 2d | Longbow, heavy crossbow | Requires Ammunition |
+
+| Class | Slots | Notes |
+|---|---|---|
+| None | 0 | Naked! Or clothes, robes, etc |
+| Hide | 1 | Leather armor, hide armor, winter clothing, heavy robes, or gladiator's armor |
+| Scale | 2 | Lamelar, chain shirt, or reinforced leather |
+| Chain | 3 | Maille or breastplate |
+| Half plate | 4 | Banded, splint, or plates-and-mail |
+| Full plate | 5 | Full gothic platemail |
 
 Roll 4 times on A, B, or C (your choice).
 * If you don't have any light sources, you can trade any item for "torches (3)".
 * If you don't have any food, you can trade any item for "rations (3)".
-
-| A | Dungeoneering Items |
-|---|---|
-| 1 | Lantern & may trade for oil |
-| 2 | Oil (3) |
-| 3 | ... |
-
-| B | Common Items |
-|---|---|
-| 1 | Rations (3) |
-| 2 | Garlic (3) |
-| 3 | Salt (3) |
-
-| C | Uncommon Items |
-|---|---|
-| 1 | Mercury (1) |
-| 2 | Salve (1) |
-# Your Character
-
-Randomly generate your character's attributes, equipment, and details, and then start playing!
-
-## Your Attributes
-
-For each attribute below, roll 3 dice and note how many of their values are 4+; that's your bonus with that attribute.
-Your attributes set the difficulty of your saves, and are bonus dice on your attacks and skills; higher is better.
-
-* **Strength.** Use force to overcome an obstacle. Bursting bonds. Lifting a great weight. Running, climbing, jumping, swimming. Resisting paralysis, grappling, or being crushed. Blocking a melee attack.
-* **Reflex.** Use instinct or agility to avoid an obstacle. Resist surprise, a missile weapon, a fireball, or a pit trap. Avoid detection or apprehension. Walk a tightrope.
-* **Health.** Resist illness, disease, or death. Resist heat, or cold. Endure. Carry more things, or take more conditions.
-* **Craft.** Use training & concentration to overcome an obstacle. Doing it right the first time. Making the shot. Perfect even stitches. Picking the lock. Juggle. Being a quick study. Know the answer. Pick a pocket.
-* **Will.** Use force of personality to overcome an obstacle. Resist despair, fear, or temptation. Tame a mule, lead an army.
-
-You can now switch the values of two attributes if you want.
-
-### Special Attributes
-
-Some special numbers which work a little like attributes, but are actually set in some other way.
-
-* **Luck.** Initial equipment, wound table outcomes, and decide who the monster goes for. Sum the other 5 attributes above and compare:
-  * 0-1: Luck 5
-  * 2-3: Luck 4
-  * 4-6: Luck 3
-  * 7-10: Luck 2
-  * 11-15: Luck 1
-  * 16+: Luck 0
-  > This is only for luck at character generation! Afterwards, it's its own statistic.
-* **Armor.** Use whatever you're wearing to defend against attacks.
-
-> _Optional Rule: More Stats._ Depending on the scenario, you might use other stats like _Faith_ or _Reason_; _Authority_ or _Empathy_... 
-
-## Level & Class
-You have 0 XP (e**X**perience **P**oints), are Level 1, and are therefore a Novice tier adventurer.
-
-You have 1 HD per level (1 HD now).
-
-Each time you gain a level, roll 1d vs a stat of your choice.
-* On a hit, raise the stat by 1.
-* Otherwise (or if you prefer), gain a new Title describing your exploits.
-
-Each time you gain a tier (at levels 0, 1, 2, 4, 7, 11, and 16), you will make a class selection.
-
-Choose (or roll) your class, use it to decide your background, and then make your 2 choices (0th & 1st level) from it.
-I guess you could take them in two different classes if you wanted.
-
-| lower of 2d | Highest Stat | class |
-|---|---|---|
-| 1 | Health | Commoner |
-| 2 | Strength | Warrior |
-| 3 | Reflex | Expert |
-| 4 | Craft | Adept |
-| 5 | Will | Noble |
-| 6 | ??? | ??? |
-
-### Commoner
-
-| Luck | Background |
-|---|---|
-| 0 | Shepherd: Crook, leather armor, shears, pail |
-| 1 | Scullion: Knife, shield, pots, salt |
-| 2 | Sailor: Rope, club, chart, sewing kit |
-| 3 | Clerk: Recordbook, drab clothing, ink, lens |
-| 4 | Farmer: Pitchfork & pet goose, pig, or dog |
-| 5 | Tourist: Loud clothing, bag of money, wineskin |
-* **Benefit.**
-  * +1 inventory slot
-  * +1 HD
-
-### Warrior
-
-| Luck | Background |
-|---|---|
-| 0 | Barbarian: Axe, shield, skulls, fur cloak |
-| 1 | Pit Fighter: Leather armor, club, prize belt |
-| 2 | Bandit: Leather armor, bow, dagger, green cloak |
-| 3 | Guard: Leather armor, spear, bell, badge |
-| 4 | Squire: Scale armor, sword, shield, hawk |
-| 5 | Soldier: Scale armor, spear, crossbow |
-* **Benefit.** Choose one each time:
- * +1d to weapon attacks
- * +1d to weapon defenses
- * +1d vs spellcasters, or chimeras, or giants, etc
- * +2 inventory slot for weapons & armor
-
-### Expert
-
-| Luck | Background |
-|---|---|
-| 0 | Thief: lockpicks, dagger, black cloak, silent shoes |
-| 1 | Spy: disguise, rapier, papers, |
-| 2 | Trapper: bow, dagger, green cloak, tough boots |
-| 3 | Craftsman: tools, leather armor, some money |
-| 4 | Poisoner: poison, dagger, wineskin, rations |
-| 5 | Inspector: leather armor, lots of money, crony, 
-* **Benefit.** Choose one each time:
-  * +2 inventory slot for tools
-  * +1d to a background's skills
-
-### Adept
-
-| Luck | Background |
-|---|---|
-| 0 | Monk: robe, staff, bowl |
-| 1 | Sorcerer: robe, dagger, holy symbol |
-| 2 | Seer: robe, orb, tome |
-| 3 | Witch: robe, crook, herb pouch |
-| 4 | Warlock: robe, familiar, sword  |
-| 5 | Alchemist: leather apron, flask, tome |
-* **Benefit.** Choose one each time:
-  * +2 inventory slot for relics & spells, and spellburn.
-  * +1d to cast skill
-  * +1d to spell attacks
-  * +1d to spell defenses
-
-### Noble
-
-| Luck | Backgorund |
-|---|---|
-| 0 | Bard: lute, fancy clothing, rapier |
-| 1 | Priest: vestments, holy symbol, club, oil |
-| 2 | Dancer: dagger, bracelets, kerchiefs |
-| 3 | Jester: motley garb, puppet, dagger, bells |
-| 4 | Merchant: scale, bag of money, lantern |
-| 5 | Princess: dress, rapier, tome, bag of money |
-* **Benefit.** Choose one each time:
-  * +2 inventory slot for treasure & followers
-  * +1d to inspire
-  * +1d to intrigue
 
 ## Other 
 
@@ -296,35 +208,7 @@ Roll a 1d save (sometimes more?) to figure out which:
 | bronze | 5 | Dagger, breastplate |
 | steel | 6 | Sword |
 
-## Weapons & Armor
-
-A melee weapon takes 1 slot & gives you +1d (2 slots & +2d if it's heavy).
-A ranged weapon has the same rules, and also requires arrows (or stones) (so total 2 slots or 3 slots).
-A small or large shield works the same as a melee weapon, but defensively.
-
-| Dmg | Slots | Example Weapons | sp cost |
-|-----|---|-----------------|---|
-| +0d | 1 | Club, darts, dagger, whip | 1 |
-| +0d | 2 | stones/bolts and a sling or hand crossbow | 10 |
-| +1d | 1 | sword, axe, mace, rapier | 10 |
-| +1d* | 1 | Light shield (to defense) | 10 |
-| +1d | 2 | bullets/bolts/arrows and a gonne, light crossbow, or bow | 25 |
-| +1d | 2 | staff, spear, flail | 5 |
-| +2d | 2 | Lance, halberd, maul, greataxe, greatsword | 25 |
-| +2d* | 2 | Heavy shield (to defense) | 50 |
-| +2d | 3 | bullets/bolts/arrows and an arquebus, heavy crossbow, or longbow | 50 |
-
-Armor is directly related to slots too:
-
-| AC | Slots | Examples | sp cost |
-|---|---|---|---|
-| 2 | 0 | Clothing, robes, vestments | 1 |
-| 3 | 1 | Leather armor, hide armor | 10 |
-| 4 | 2 | Scale armor, chain shirt | 50 |
-| 5 | 3 | Chain maille, breastplate | 200 |
-| 5&1d | 4 | Half Plate | 1000 |
-| 5&2d | 5 | Full Plate | 5000 |
-| n/a | 0 | Helmet (+1d vs dismemberment) | 10 |
+## Other goods
 
 | Animals | sp cost |
 |---|---|
@@ -375,190 +259,3 @@ If you took any conditions, Health save against +1d per condition you took +1p p
 * 4: Dead (mood was an injury)
 * 5: Flagrantly Dead (mood was an injury)
 
-## Things to carry
-
-You don't only carry baggage in slots, but also things.
-
-### Weapons
-A weapon gives +1d if it's appropriate.
-If it's a heavy melee weapon, give it +2d instead (it takes another inventory slot).
-If it's a ranged weapon, give it +1p.
-A simple or crude weapon also gets +1p.
-
-A shield gives +1p to the attacker. A tower shield gives -1d instead.
-
-You can weild a light weapon in your offhand; it gives +2b.
-
-* Swords (including knives): Quick, slashy, and finesse weapons
-* Axes (including greatswords): Chopping destructive cleavey weapons
-* Clubs (maces, flails, staves): Bludgeoning hammers
-* Spears (polearms, missiles): Stabby pokey weapons
-
-### Armor
-No armor: DC 2 (+1p vs swords)
-Leather: DC 3 (+1p vs spears)
-Splint: DC 4 (+1p vs axes)
-Chain: DC 5 (+1p vs clubs)
-Plate: DC 6
-
-Each armor takes 1 more inventory slot than the last.
-
-### Wards
-Exactly like armor, but for increasing Aura.
-Things like Garlic, Holy Symbols, prayerbooks.
-
-### Artifacts
-These are magical objects which carry spells: wands, saints' fingerbones, spellbooks.
-
-
-# How to Play
-Real in-depth procedures for play and explanations of the above.
-
-## Roll dice in play when there's danger (or on a table I guess)
-
-The DM rolls dice to randomize something (a random encounter, or to generate treasure, or the weather, or the monster's mood).
-The players roll the rest of the dice; they might do random generation or else roll for:
-
-* A _damage roll_ to discover how well they do something; usually an attack but maybe a long term project.
-* A _saving throw_ to mitigate a terrible fate into something more palatable; often a parry or dodge but maybe to avoid missing an opportunity.
-
-More dice in the pool represent more danger. Fewer, more safety.
-
-During a _damage roll_, each die with a face value at or over the _difficulty_ is a _hit_ (the low value "misses" don't matter).
-During a _save roll_, each die with a face value at or over the _defense_ is a _hurt_ (the low value "saves" don't matter, either).
-These are the same mechanic seen from the opposite sides, which is why the names are so similar; hits or hurts are both _harms_.
-Usually, the attacking character sets the number of dice to roll, while the defending character sets the defense, but there are often a few bonus dice tricks here and there, too.
-
-### Damage and Saves are mirror images
-
-We have four titanic warriors that want to fight.
-* the PC Alice with dmg 4, def 2
-* her equivalent NPC: Alizard Man, with dmg 4, def 2
-* Bob with dmg 3, def 3
-* his equivalent NPC: Boblina Goblina, with dmg 3, def 3
-
-> Alizard attacks Bob: Bob rolls a save with 4 dice and counts any which result in a 3+ as a hurt.
-> Alice attacks Boblina: Alice would roll damage with 4 dice, and count any which result in a 3+ as a hit.
-> In both cases odds of harms are: `[(0, <1%), (1, 10%), (2, 30%), (3, 40%), (4, 20%)]`
-
-> Boblina attacks Alice: Alice rolls a save with 3 dice and counts any which result in a 2+ as a hurt.
-> Alizard attacks Bob: would roll damage with 3 dice and count any which result in a 2+ as a hurt.
-> In both cases odds of harms are: `[(0, <1%), (1, 7%), (2, 35%), (3, 58%)]`
-
-> If Alizard attacks Boblina, I guess the DM plays out both sides, rolling for Boblina. Same if Boblina attacks Alizard.
-> If Alice attacks Bob, let Bob roll the save out of courtesy. If Bob attacks Alice, let Alice roll the save.
-
-### Dice method
-
-Lots of things can modify both sides of this roll: adding dice, subtracting dice; giving the attacker or defender the choice of a reroll, etc.
-* _Dutiful dice_ (`3d` means "3 dependable and _dutiful_ dice"): These are applied before the roll, and whichever player is entitled to them can choose how to apply them; in this case, to roll either 3 more dice or 3 fewer dice.
-  > Bob is a _novice warrior_, so he gets 1d to his damage rolls in melee.
-  > Bob is armed with a _scimitar_, so he gets an extra 1d to his damage rolls (2d so far).
-  > Alizard is also a _novice lizard_, so gets 1d to his saves -- which the DM uses to reduce Bob's attack to 1d.
-* _Quisling dice_ (`2q` means "2 treacherous, _quisling_ dice"): This are just like dutiful dice, but the other character in the roll gets to choose how to use them. 
-  > Bob's arm is _injured_ and so he has 1q to his attacks from that. This brings Bob's attack down to 0d total.
-  > But! Alizard is _slow_, and so he has 1q to his _armor saves_ from _that_! Bob uses this die to brings his attack back up to 1d!
-
-Cancel out all of the dutiful and quisling dice, and then roll against the defender's DC.
-> Bob rolls his 1d against Alizard's scaly hide (DC 4) and rolls a `[5]` -- a `hit`!
-
-* _Bonus rerolls_ (`4b` means "4 blessed bonus dice"): Whichever player is entitled to these can pick (up to this number) of dice to reroll after seeing their value.
-  > Bob has the title of _Swordmaster_, so gets 1b from that.
-  > Bob's scimitar is the _Sirensong_ which gives 1b against lizards.
-  > Bob is also _strong_, 1b more. Bob's bonus rerolls are at 3b so far.
-  > Alizardman is using a _crude shield_, so gets 1b -- which subtracts from Bob's rerolls.
-  > Bob has 2b rerolls so far.
-* _Penalty rerolls_ (`2p` means "2 puny penalty dice"): Just like bonus rerolls, but the other character gets to choose how to use them.
-  > Bob is _dazed_ (1p), leaving Bob with just 1p.
-  > Alizard doesn't have any penalties.
-
-Cancel out all of the bonus and penalty rerolls, and then if any remain, whoeever has the balance can pick which dice to reroll.
-Remember how many dice were already hits before rerolling; whoever has control of the rerolls can decide if this can cause the number of hits to change!
-> Bob has a bonus die, but he already hit. We're not using critical hits, so we don't bother with it this time.
-
-> _Optional rule: Don't roll nine dice_. If you would ever roll 9+ dice, just assume that six of them resulted in `[1, 2, 3, 4, 5, 6]` and roll six fewer, until you're rolling a reasonable number of dice.
-
-> _Optional rule: Critical 6s explode_. After the rerolls, any dice that show a `6` explode: note how many hits have happened so far, and then roll more dice for each 6. Those sixes explode, too.
-
-> _Optional rule: All at once_. If you're good at math and hate fun, you can do the rerolls by canceling `d` & `q` leaving some number of `d`, canceling `b` & `p` leaving some number of `r`erolls, rolling `d+r` dice, and letting the appropriate player pick which `d` dice to keep. But it's more fun to narrate it all.
-
-## Extreme DCs
-
-Roll DCs 1 or lower and 6 or higher as these values instead:
-
-| Original defender's DC | New DC |
-|------------------------|--------|
-| -1 | 2&3q |
-| 0 | 2&2q |
-| 1 | 2&1q |
-| 2-5 | 2-5 |
-| 6 | 5&1b |
-| 7 | 5&2b |
-| 8 | 5&3b |
-
-# Bestiary
-
-TODO
-
-# Treasure
-
-TODO
-
-# Levels & Tiers
-
-
-# XP & Level & Tier
-You have 0 e**X**perience **P**oints.
-This makes you a level 1, _novice_ tier character.
-
-You gain the next level every `level * 1000 XP`.
-You get XP for retrieving treasure (1XP per sp of treasure recovered), defeating monsters (10XP per level of foe), and for achieving goals (variable).
-You gain a new tier at certain character levels; when y
-
-| Tier | Title | At Level |
-|------|-------|----------|
-| 1 | Novice | 1 |
-| 2 | Apprentice | 2 |
-| 3 | Journeyman | 4 |
-| 4 | Master | 7 |
-| 5 | Grandmaster | 11 |
-| 6 | Demigod | 16 |
-
-At each new tier (including at level one), select one of the following benefits:
-* Warrior: 
-
-## Titles
-
-A good title is an exploit ("slayer of goblins"), a background or skill ("apothecary"), a trick or knack ("master of the seven palms"), or a boast ("silent-stepping").
-
-Sometimes, it deepens a connection to a particular literal-title ("swordmaster of Navarre"), person ("Lover of Brienne"), place ("cimmerian"), thing ("captain of the sparhawk"), or office ("paladin of justice").
-
-A wizard or kung fu master might name their new techniques, implicitly claiming mastery over them: "fire mage", but also "seven serpent touch" or "ooze hammer".
-A gun-nut might name their very favorite thing ("I call her Vera").
-
-
-
-
-| Total XP | Level | Tier |
-|----------|-------|------|
-|      0   | 1     | Novice (1) |
-|   1000   | 2     | Apprentice (2) |
-|   3000   | 3     | Apprentice (2) |
-|   6000   | 4     | Journeyman (3) |
-|  10000   | 5     | Journeyman (3) |
-|  15000   | 6     | Journeyman (3) |
-|  21000   | 7     | Master (4) |
-|  28000   | 8     | Master (4) |
-|  36000   | 9     | Master (4) |
-|  45000   | 10    | Master (4) |
-|  55000   | 11    | Grandmaster (5) |
-|  66000   | 12    | Grandmaster (5) |
-|  78000   | 13    | Grandmaster (5) |
-|  91000   | 14    | Grandmaster (5) |
-| 105000   | 15    | Grandmaster (5) |
-| 120000   | 16    | Demigod (6) |
-| 136000   | 17    | Demigod (6) |
-| 153000   | 18    | Demigod (6) |
-| 171000   | 19    | Demigod (6) |
-| 190000   | 20    | Demigod (6) |
-| 210000   | 21    | Demigod (6) |
