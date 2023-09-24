@@ -15,10 +15,11 @@ The _damage source_ adds (or unusually removes) the number of six-sided **d**ice
 
 The _situation_ might give advantage or disadvantage to a roll, changing the **d**is**c**ard number.
 The DM is the ultimate arbiter of the total DC.
-Usually the DC is 4, but an easier check might have DC 3 or even 2; a harder check might have DC 5 or even 6.
+**If it doesn't say otherwise, then the DC is 4**, but an easier check might have DC 3 or even 2; a harder check might have DC 5 or even 6.
 You can never have DC 1 or DC 7, which are inevitable and impossible respectively.
 
 The _damage recipient_ removes (or unusually adds) a number of damage dice (**b**locking them), written as "2b" or "3b".
+1d and 1b cancel each other out, 1 for 1, before the roll.
 It's ok if this reduces the size of the dice pool below 0d.
 > For instance, a small shield blocks 1b and a large shield gives 2b.
 
@@ -27,45 +28,82 @@ Dice showing values above the DC are **hits**. Announce the number of dice that 
 > She **hits** with the `[3, 5]` and announces the count of dice that hit --  a **hit 2**.
 
 Dice that show a 6 are **crits** and explode (roll an additional die, exploding any new crits).
-Some rolls don't allow crits, and will say so.
+Some rolls don't allow crits, and will say so -- sometimes called "no crits".
 > Bob rolls 7d and gets `[1, 2, 3, 4, 6, 6, 6]` vs DC3.
 > He hit with the `[3, 4]` and crit with the `[6, 6, 6]` -- a _hit 2 crit 3_ (so far!).
 > He rerolls 3d and gets `[2, 4, 6]` -- a _hit 3 crit 4_ so far.
 > He rerolls the new 1d that hasn't exploded yet and gets `[4]` -- a total of **hit 8**.
 
-## Impossible rolls
+## Weird pool sizes
 
-Sometimes you need to roll fewer than 1d, like 0d or -1d.
+Sometimes you need to roll fewer than 1d, like 0d or -1d (such as when the pool is all block dice...).
 When you roll 0d, roll 2d and pick the lowest die (leading to a smaller hit).
 Do the same thing with one additional die for each number below 0.
-> Alice rolls a saving throw against a rat bite at -1d vs DC2.
-> She rolls and picks the least-damaging result of [1, 4, 6].
+> Alice rolls a saving throw against a rat bite at -1d.
+> She rolls and picks the least-damaging result from `[1, 4, 6]`.
 > The 6 _would be_ a crit and explode, but that 1 makes it a complete _miss_.
-
-Sometimes the roll is impossible because it would need to beat a DC greater than 6.
-When that happens, set the DC to 6 and discard the difference in dice before the roll.
-> Bob has a _shield +2_ and _fullplate +3_, is benefitting from _stoneskin_ and _haste_ and _shield of faith_, is _parrying_, and so forth.
-> He's got DC12.
-> Alice, however, has an _epic ballista of bobslaying_ and what with one thing and another is rolling 10d.
-> Resolve this as 4d vs DC6.
-
-It's ok for the DC to be 1 or lower (that just means everything hits).
 
 If you would otherwise roll 9d or more, assume every 6d roll `[1,2,3,4,5,6]` and roll for the remainder.
 This is necessarily at least one crit.
 
-# Characters start randomized and grow through play
+## Players roll all of the dice.
 
-In order to start playing quickly, randomize almost about your character and discover who they are through play.
+* When a player rolls to deal damage, it's a "damage" or "dmg" roll.
+  > Bob tries to stab Alizard Mann, so he rolls a pool of dice for damage he could deal.
+* When a player rolls to avoid taking damage from someone else, it's a "saving throw" or "save" roll.
+  > Boblin tries to stab Alice, so she rolls a pool of dice for damage she couldn't dodge.
+* Sometimes the player rolls a saving throw but the stakes are more metaphorical; that's a "skill check" or "skill" roll.
+  > Alice tries to avoid detection by a guard, rolling a saving throw. On a failure, she can take damage or raise the alarm.
+* Sometimes, the player rolls damage against a metaphorical "project check" or "project" roll.
+  > Bob tries to pick a lock, trying to rack up a number of successes during this opportune moment.
 
-## Attributes
+The rules still work the same way in each case!
+> Obviously anyone (including the DM) might roll dice on a random table.
+> That's different.
+> Within the fiction of the game, the DM asks the players to roll dice when the outcome is uncertain in order to determine "how much" of something happens.
 
-Roll 3d vs DC 4 (don't explode) for each attribute in order, then switch 2 (if you want):
+# Character Statistics
+
+As with any game, characters (and obstacles, scenery, items, and other phenomena) have statistics to help the rules mediate their interactions.
+It's the DM's job to resolve "what happens next" and should only call for the dice if the answer seems fun to randomize.
+
+## Tier & Level
+
+> Can my wizard knock out a dragon in one punch? Why (or why not)?
+
+| Level | Tier | Tier Title | Notes & Examples |
+|---|---|---|---|
+| 0 | 0 | Common | Ordinary: a random villager, a wooden club |
+| 1 | 1 | Novice | **Your new adventurer**, a precocious student; a spear or dagger |
+| 2-3 | 2 | Apprentice | You after a few adventures, a guard; a martial weapon |
+| 4-6 | 3 | Journeyman | A veteran soldier, a fine martial weapon |
+| 7-10 | 4 | Master | A knight or wizard; a magic sword |
+| 11-15 | 5 | Grandmaster | A famous knight or archmage; a flaming magic sword |
+| 16-21 | 6 | Legendary | A world-famous knight or archmage; an intelligent magic sword |
+| 22+ | 7+ | Demigod (or better) | A force of nature; awe-inspiring and unharnessable |
+| -1 (etc) | -1 (etc) | Poor (or worse) | A giant rat, a broken wretch, a thighbone-as-club or pen-knife |
+
+
+This game uses a power **tier** to suggest the power, scale, and impact of something within the game.
+Each tier represents a pretty big power break to the level before it.
+
+Within each tier, player characters have **level** to indicate slightly more fine-grained progress.
+Nothing else in the world has (or needs) a level; it's just so that we can regularly give your character growth.
+
+As a starting character, you have one Tier Point and one Level Point to spend.
+
+## The Attributes
+
 * **Strength:** Resist paralysis, obstacles, impediments, or melee blows; power through.
 * **Reflex:** Resist missiles, blasts, surprises, and detection; evade or become aware.
 * **Intelligence:** Resist confusion, amnesia, distraction or hesitation; know how to do something.
 * **Will:** Resist fear, compulsion, magical or social attacks; convince or resist.
 * **Health:** Resist poison, fatigue, transformation, and death; Carry more & carry on.
+
+## Attributes
+
+Roll 3d (no crits) for each attribute in order, then switch 2 (if you want):
+
 
 Define your **Luck**, which works like your other statistics but is calculated by summing the other 5 statistics and checking the below table.
 * **Luck:** Starting social standing, avoid scars, improve your character's abilities.
@@ -107,17 +145,6 @@ You can permanently spend luck during play for one of the following:
 * Improve an Item: When you mark the last Use of an item, choose to spend 1 luck to give the item 1 more Use and a new Title (always succeeds).
 * Claim Title: When something impressive happens, choose to spend 1 luck to gain a new Title (always succeeds).
 
-Every time your level crosses a triangular number (1, 3, 6, 10, 15, 21, etc), your personal power level increases and you're ready to face a new level of challenge:
-| Level | Tier | Tier Title |
-|---|---|---|
-| 0 | 0 | Initiate |
-| 1 | 1 | Novice |
-| 2-3 | 2 | Apprentice |
-| 4-6 | 3 | Journeyman |
-| 7-10 | 4 | Master |
-| 11-15 | 5 | Grandmaster |
-| 16-21 | 6 | Champion |
-| 22+ | 7+ | Demigod+ (etc) |
 
 When you get a new Tier Title, you can improve one of your character's statistics automatically:
 * +1d to melee attacks (or ranged attacks, or damage from spells, etc etc)
