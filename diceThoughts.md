@@ -1,36 +1,34 @@
 # dice & danger
 
-A simple hack of old school dungeon crawling games in the vein of Into the Odd and many other hacks.
+A simple hack of old school dungeon crawling games in the vein of Into the Odd (and many other hacks).
 
-# This is a d6-based DIY elfgame
-
-* There is a DM and the rest of you are Players with Player Characters
-* You'll want about 4 six sided dice per player; pencils, paper, etc.
- * The core mechanic is to roll a pool of dice, keeping the highest, with exploding crits.
-* The characters have:
-  * A level (starts at 1) & random attribute scores (in the range 1-6)
-  * Slot-based inventory which doubles for fatigue, injury, and so on
-  * A yen for treasure (which gives experience) and for danger (which might kill them)
+> This is a d6-based DIY elfgame about adventurers and their explorations into funhouse dungeons.
+> One of you is the DM (Narrator, Referee, Judge), and the other Players have Player Characters (the DM also has Non-Player Characters).
+> Much more ink has been spilled about How To Play an RPG; go there.
 
 Have fun!
 
-# Players roll the dice to determine damage
+# Players roll d6s to determine damage given or received
 
-The damage _source_ sets the number of six-sided dice of **d**amage, like 1d or 4d.
+The _damage source_ adds (or unusually removes) the number of six-sided **d**ice of **d**amage to the pool, like +1d or +4d.
 > For instance, shortswords are 1d, longswords are 2d, and polearms 3d.
 
-The damage _recipient_ specifies which face-values of dice to **D**is**C**ard, like DC2 or DC4.
-> DC1 or lower is very fragile since it keeps every dice value.
-> DC3 keeps 3s, 4s, 5s, and 6s (discarding 1s and 2s).
-> DC5 keeps 5s and 6s (discarding 1-4).
+The _situation_ might give advantage or disadvantage to a roll, changing the **d**is**c**ard number.
+The DM is the ultimate arbiter of the total DC.
+Usually the DC is 4, but an easier check might have DC 3 or even 2; a harder check might have DC 5 or even 6.
+You can never have DC 1 or DC 7, which are inevitable and impossible respectively.
+
+The _damage recipient_ removes (or unusually adds) a number of damage dice (**b**locking them), written as "2b" or "3b".
+It's ok if this reduces the size of the dice pool below 0d.
+> For instance, a small shield blocks 1b and a large shield gives 2b.
 
 Dice showing values above the DC are **hits**. Announce the number of dice that hit as a **hit number**.
 > Alice rolls 3d and gets `[1, 3, 5]` vs DC3.
 > She **hits** with the `[3, 5]` and announces the count of dice that hit --  a **hit 2**.
 
-Damage dice that show a 6 are **crits** and explode (roll an additional die, exploding any new crits).
+Dice that show a 6 are **crits** and explode (roll an additional die, exploding any new crits).
 Some rolls don't allow crits, and will say so.
-> Bob rolls 7d and gets `[1, 2, 3, 4, 6, 6, 6] vs DC3.
+> Bob rolls 7d and gets `[1, 2, 3, 4, 6, 6, 6]` vs DC3.
 > He hit with the `[3, 4]` and crit with the `[6, 6, 6]` -- a _hit 2 crit 3_ (so far!).
 > He rerolls 3d and gets `[2, 4, 6]` -- a _hit 3 crit 4_ so far.
 > He rerolls the new 1d that hasn't exploded yet and gets `[4]` -- a total of **hit 8**.
