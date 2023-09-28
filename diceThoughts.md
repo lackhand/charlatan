@@ -9,13 +9,14 @@ Great gratitude to Ben Milton's CC BY 4.0 Maze Rats.
 
 Have fun!
 
-# Players roll d6s to determine damage given or received
+# Players roll d6s to determine damage given (or received)
 
 The _damage source_ adds (or unusually removes) the number of six-sided **d**ice of **d**amage to the pool, like +1d or +4d.
-> For instance, shortswords are 1d, longswords are 2d, and polearms 3d.
+> For instance, shortswords are 1d, longswords are 2d, and polearms 3d; level one fighters add +1d, and level eleven add +4d.
 
 The _situation_ might give _advantage_ or _disadvantage_ to a roll, changing the **d**is**c**ard number.
-**If it doesn't say otherwise, then the DC is 4**, but an easier check might have DC 3 or even 2; a harder check might have DC 5 or even 6.
+**If it doesn't say otherwise, then the DC is 4**.
+An easier check might have DC 3 or even 2; a harder check might have DC 5 or even 6.
 Don't roll if the DC is not a number from 2-6; figure out what makes sense instead.
 The DM is the ultimate arbiter of the total DC.
 
@@ -68,7 +69,7 @@ When the pool size is...
   > Alice tries to avoid detection by a guard, rolling a saving throw. On a failure, she can take damage or raise the alarm.
 * Sometimes, the player rolls metaphorical damage to make progress on a "project check" or "project" roll.
   > Bob tries to pick a lock, trying to rack up a number of successes during this opportune moment.
-* Sometimes anyone (including the DM) just rolls dice to randomize what happens next.
+* Sometimes anyone (including the DM) just rolls dice to randomize what happens next like on a table.
   That's different.
 
 # Character Statistics
@@ -82,23 +83,23 @@ It's the DM's job to resolve "what happens next" and should only call for the di
 
 | Level | Tier | Tier Title | Notes & Examples |
 |---|---|---|---|
-| 0 | 0 | Common | Ordinary: a random villager, a wooden club |
-| 1 | 1 | Novice | **Your new adventurer**, a precocious student; a spear or dagger |
-| 2-3 | 2 | Apprentice | You after a few adventures, a guard; a martial weapon |
-| 4-6 | 3 | Journeyman | A veteran soldier, a fine martial weapon |
-| 7-10 | 4 | Master | A knight or wizard; a magic sword |
-| 11-15 | 5 | Grandmaster | A famous knight or archmage; a flaming magic sword |
-| 16-21 | 6 | Legendary | A world-famous knight or archmage; an intelligent magic sword |
-| 22+ | 7+ | Demigod (or better) | A force of nature; awe-inspiring and unharnessable |
-| -1 (etc) | -1 (etc) | Poor (or worse) | A giant rat, a broken wretch, a thighbone-as-club or pen-knife |
+| 0 | 0 | Common | Ordinary: a random villager, a wooden club; a goblin |
+| 1 | 1 | Novice | **Your new adventurer**; a precocious student; a simple weapon like a spear or dagger; an orc |
+| 2-3 | 2 | Apprentice | You after a few adventures, a guard; a martial weapon like a sword or axe; a gnoll |
+| 4-6 | 3 | Journeyman | A veteran soldier, a finely made sword or axe; an ogre |
+| 7-10 | 4 | Master | A knight or wizard; a magic sword; a hill giant |
+| 11-15 | 5 | Grandmaster | A famous knight or archmage; a flaming magic sword; an efreet |
+| 16-21 | 6 | Legendary | A world-famous knight or archmage; an intelligent magic sword; a mighty dragon |
+| 22+ | 7+ | Demigod (or better) | A force of nature; awe-inspiring and unharnessable; an ancient dragon |
+| -1 (etc) | -1 (etc) | Poor (or worse) | A giant rat, a broken wretch; a broom handle, a sharpened stone; a kobold |
 
 This game uses a power **tier** to suggest the power, scale, and impact of something within the game.
-Each tier represents a pretty big power break to the level before it.
+Each tier represents an order-of-magnitude increase.
 
-Within each tier, player characters have **level** to indicate slightly more fine-grained progress.
-Nothing else in the world has (or needs) a level; it's just so that we can regularly give your character growth.
+Within each tier, player characters have **level** to measure slightly more fine-grained progress.
+Nothing else in the world has (or needs) a level; it's just so that we can give your character regularly scheduled growth.
 
-> Note: As a starting character of Level 1, you have one **T**ier **P**oint and one **L**evel **P**oint to spend.
+> Note: As a starting character of Level 1, you have one **T**ier **P**oint and one **L**evel **P**oint to spend; read on!
 
 ## The Attributes
 
@@ -114,15 +115,16 @@ Player characters have six attributes which measure their capability in broad sw
 > NPC attributes are a little bit simpler than player character's attributes, but otherwise work the same way.
 > * **FORTitude:** A monster's Strength and Constitution. Small things can't use the fort they have as well as big things.
 > * **INSTinct:** A monster's Reflex and Intellect. Animal intelligences can't use the inst they have as well as complex intelligences.
-> * **WILL:** The monster's Will. This is pretty universal, and can also include their luck in a pinch.
+> * **WILL:** The monster's Will (& luck in a pinch).
 
 Roll 3d DC 4 (no crits) for each of str, refl, int, will, & con (but not luck!) in order, then switch 2 (if you want).
-* For every attribute equal to 0, increase your luck by 1.
-* For every attribute equal to 1, increase your luck by 1/2.
-* For every attribute equal to 2, increase your luck by 1/3.
+* Start your luck at 0.
+* For every other attribute equal to 0, increase your luck by 1.
+* For every other attribute equal to 1, increase your luck by 1/2.
+* For every other attribute equal to 2, increase your luck by 1/3.
 * Round down.
 
-> Rolling an attribute: When you're told to "roll strength", add 1d per point of strength.
+> Rolling an attribute: When you're told to "roll strength", add to the pool 1d per point of strength.
 > When you're told to "reflex save", add 1b per point of reflex.
 > And so on.
 > By default, you're counting hits of damage; by default, that's against DC 4.
@@ -135,195 +137,222 @@ Select a **Background Title** based on your **highest attribute** (if several ar
 |---|---|---|---|---|---|
 | Strength (Warrior) | Barbarian | Gladiator | Guard/Soldier | Squire | Knight |
 | Reflex (Hunter) | Ratcatcher | Thief | Scout/Outlaw | Ranger | Spy | 
-| Health (Laborer) | Farmer | Sailor | Cook/Poisoner | Merchant | Armorer |
+| Health (Laborer) | Scullion | Farmer/Shepherd | Cook/Poisoner | Sailor | Merchant |
 | Intelligence (Expert) | Tinker/Tailor | Artisan | Architect/Engineer | Herbalist | Alchemist |
-| Will (Adept) | Hermit/Monk | Herald | Sorcerer | Witch | Priest |
+| Will (Adept) | Hermit/Monk | Nursemaid/Nun | Sorcerer | Witch | Priest |
 | Luck (Noble) | Beggar | Traveler | Scribe | Entertainer | Prince |
 
-Your DM might tell you to pick other titles for your **nationality**, **race**, **appearance**, **alignment**, or **creed** (whatever you're using in the game).
+Your DM might tell you to pick other titles for your **nationality**, **race**, **religion**, **appearance**, **alignment**, etc (whatever might come up in your game).
 > Alice's character has a high reflex and middling luck, so she was a _scout_. She decides her character is English (and human), a stout & ruddy Protestant Kingswoman of Leeds.
-> Bob's character has a high will and low luck, and so he was a _herald_. He decides his character is an enigmatic faerie Envoy from the Thistledowns, armed in fish-scales and here to ensure the Pretender claims the throne of Wales.
+> Bob's character has a high will and low luck, and so he was a _herald_. He decides his character is a pagan faerie Envoy from the Thistledowns, armed in fish-scales and here to ensure the Pretender claims the throne of Wales.
+> Carol is always a Dwarf, and in this game she chooses no differently: she's wound up with a Dwarven Cook -- and she'll figure out the rest as she goes.
 
 When a title is relevant, the DM might give _advantage_ or _disadvantage_, adjusting the DC (especially for skill or project rolls).
-You'll acquire more titles as the game goes on.
+Don't worry, you'll acquire more titles as the game goes on.
 
 ## Derived statistics & leveling
 At every tier (including your first), a character gets 1 **T**ier **P**oint to spend in-game.
 Each session, you can try to spend any unspent Tier Point(s) once; if you fail the opportunity, you have to wait until the next session to try again.
-* +1 to one stat: While testing that stat, roll 1d vs a DC of the stat's current value. If you match or beat, increase the stat by 1 now and forever.
+* +1 to **one stat**: While testing that stat, roll 1d vs a DC of the stat's current value. If you match or beat, increase the stat by 1 now and forever.
+* +1 to **melee**: While rolling a melee attack or defense, roll 1d vs a DC of your number of melee dice. If you match or beat, increase your melee dice by 1 now and forever (starts at 0d).
+* +1 to **ranged attacks**: While rolling an attack with any kind of ranged weapon (thrown, seige, etc)... otherwise as **melee**.
+* +1 to **dodging**: While rolling a defense against a physical threat... (vs ranged, melee, blasts...)
+* +1 to **magic skill**: When saving to activate a spell or device...
+* +1 to **magic power**: When rolling spell damage (or other impact)...
+* +1 to **magic defense**: When saving against a spell or power's effects...
+* +1 to **skill**: While rolling a skill check... (vs _all_ skill and project checks!)
+
+These pools of dice make you better at default adventurer checks -- attacks, defenses, magical casting or skill checks -- forever.
+> Alice has +1 melee dice. She gets +1d to attacks with melee weapons, and +1b to defenses against melee weapons.
+> She also then picks up +1b to dodging. She has a total of +2b to dodge melee weapons, on top of her shield, armor, or agility (if any).
 
 **L**evel **P**oints work the same way as TP, but more frequently.
-* +1 to **H**it **D**ice: When you would take damage at 0 HD, roll 1d vs a DC of your current max HD. If you match or beat, increase your max and current by 1 now and forever.
-* +1 to **M**ana **D**ice: As HD, but for MD.
+* +1 to **H**it **D**efence: When you would take damage at 0 HD, roll 1d vs a DC of your current max HD. If you match or beat, increase your max and current by 1 now and forever.
+* +1 to **M**ana **D**efence: As HD, but for absorbing hits on a spellcasting check. This lets you convert spellcasting save hits into misses.
+* +1 to **S**kill **D**efence: As HD, but for skill checks or projects. This lets you convert hits into misses.
 * Invest Item: When you would mark use: Roll 1d vs DC of item max uses; if you match or beat, increase remaining & max uses by 1 now and forever, and give it a Title.
 * New Feat: When you accomplish a feat, spend a LP to mark the occasion and take a title.
 
-You can spend hit dice to absorb dice of incoming damage.
-If you're out of hit dice, you'll take injuries (most NPCs just get knocked out at this point).
-You can spend mana dice to attempt to cast magic spells.
-If you're out of mana dice, you can't cast any more spells.
-
-Whenever you sleep, you get back all of your HD and MD.
+Whenever you sleep, you get back all of your HD, MD, and SD.
 
 ### Level Up
 You level when you spend 1000 sp per current level & spend 1 week per current level training with a tutor of at least 2 levels above current level.
-You can supplement this number with xp from monsters slain, at 10xp per HD.
+You can supplement this number with xp from monsters slain, at 10xp per HD, and freeform xp (no fixed schedule).
 
 # Inventory
-
 You may carry Ready (equipped, on your body or in your hands) 6 + CON items in slots.
-Readied armor (shields, helms, etc) gives you bonus dice of block, 1:1 per slot.
-Readied melee weapons give bonus dice of damage, 1:1 per slot.
 You might insist that there's a hand limit or something, so that 3 daggers is 1 dagger too many; use your best judgment.
-Missile weapons are the same as melee, but require you to also be carrying Ammunition (a 1-slot penalty).
-Armor, (but not shields or helms) and any items past this Ready limit are Encumbering.
+It is free to lay hands on any readied item.
+
+## Encumbranced
+You can purchase additional stacks of stowed items by Readying "Encumbered: -25% speed; -1d to speedy, athletic or sneaky tasks".
+This purchases +5 + CON unreadied slots each time.
+
+Every 10-20 pounds of other gear is another slot of gear: for instance, every 500 coins.
+An unconscious friend weighs 10 slots (+ their gear).
+
+Randomly determine which item is drawn from one of these stacks when time is of the essence.
+
+## Uses & Durability
+Most items take one slot and have 3 Uses -- bundles of 3 single-use torches, packs of 3 weekly rations, etc.
+This is sometimes written "Some Item (3)" or "Some Other Item (1)" or "(7)" or whatever.
+
+Particularly large objects might take multiple slots.
+
+When a durable item uses its last (or if intentionally destroying an object), roll damage using durability as block dice.
+Destroy on any hits, otherwise just damage.
+
+| Material | Durability |
+|---|---|
+| Cloth, Paper, Soft Leather, Wax | 0 |
+| Crystal, Glass, Ice | 1 |
+| Bone, Wood, Hard Leather | 2 |
+| Silver | 3 |
+| Clay, Stone | 4 |
+| Bronze | 5 |
+| Iron, Steel | 6 |
+| Adamant | 7 |
 
 ## Starting equipment
 
-Choose Armor or Instruments -- see later for details on that choice.
-Roll Luck; fill that many slots of inventory with your choice.
+There are alternative suggestions for starting equipment in the section on Magic.
+Otherwise:
 
-| Armors | Slots | Block | Notes |
-|---|---|---|---|
-| None | 0 | 0b | Naked! Or clothes, robes, etc |
-| Leather | 1 | 1b | Or hide armor, winter clothing, heavy robes, or pauldrons |
-| Scale | 2 | 2b | Lamelar, chain shirt, or reinforced leather |
-| Chain | 3 | 3b | Maille or breastplate |
-| Half plate | 4 | 4b | Banded, splint, or plates-and-mail |
-| Full plate | 5 | 5b | Full gothic platemail |
-| Helm | 1 | 1b | Doesn't stack with chain or better |
+Roll Luck; fill up to that many slots of inventory with Armor & Helms, your choice how (you might not get any!).
+Armor Uses absorb Hits of damage 1:1, and are repaired at 5% of the item cost per use restored.
+Heavier metal armors also provide dice of block!
 
-Choose a category: Melee Weapons (includes Shield), Ranged Weapons (comes with Ammunition), or Tricks -- see later for details.
-Roll Luck; fill that many slots of inventory with your choice.
+| Armors | Cost | Slots | Uses | Block | Notes |
+|---|---|---|---|---|---|
+| None | 0sp | 0 | 0 | 0b | Naked! Or clothes, robes, etc |
+| Leather | 10sp | 1 | 3 | 0b | Or hide armor, winter clothing, heavy robes, or pauldrons; absorb 1 during Use |
+| Scale | 25sp | 2 | 6 | 0b | Lamelar, chain shirt, or reinforced leather |
+| Chain | 50sp | 1+1 Encumbered | 7 | 1b | Maille or breastplate |
+| Half plate | 200sp | 1+2 Encumbered | 8 | 2b | Banded, splint, or plates-and-mail |
+| Full plate | 1000sp | 2+2 Encumbered | 9 | 3b | Full gothic platemail |
+| Helm | 10sp | 1 | 0 | 1b | Doesn't stack with chain or better |
 
-| Weapon Type | Slots | Damage/Block | Examples |
-|---|---|---|---|
-| Melee, Simple | 1 | 0d | Dagger, club, whip |
-| Melee, Crude | 2 | 1d | Staff |
-| Melee, Light | 1 | 1d | Shortsword, hatchet, mace, javelin |
-| Melee, Heavy | 2 | 2d | Longsword, battleax, flail, spear |
-| Melee, V. Heavy | 3 | 3d | Halberd, greatsword, maul, lance |
+Roll Luck; fill that many slots of inventory with your choice of weapons, shields, and ammunition.
+If you got 0, you can choose 1 simple, crude, or thrown weapon.
+
+You can mark a Use of your melee weapon (or ammunition) to expand your crit range by 1 for an attack (after seeing the potential crit!).
+You can mark a Use of your shield to decrease the crit range by 1 for a save (after seeing the crit!).
+You can mark a Use of your ranged weapon for advantage on an attack to counteract a penalty from range, firing into melee, etc.
+
+| Weapon Type | Cost | Slots | Damage/Block | Examples |
+|---|---|---|---|---|
+| Melee, Simple | - | 1 | 0d | Dagger (3), club(1), whip(1) |
+| Melee, Crude | - | 2 | 1d | Staff |
+| Melee, Light | 1 | 1d | Sword, hatchet, mace, javelin |
+| Melee, Heavy | 2 | 2d | Battleaxe, flail, spear |
+| Melee, V. Heavy | 3 | 3d | Halberd, maul, lance, greatsword |
 | Shield, Small | 1b | - | Buckler, targe, round wooden |
 | Shield, Large | 2b | - | Kite, tower, large steel |
-| Thrown (3) | 1 | 0d | Darts, sling + stones |
-| Ammunition (3) | 1 | - | arrows, bolts, etc. |
+| Thrown (3) | 1 | 0d | Darts |
+| Ammunition (3) | 1 | 0d | arrows, bolts, sling + stones, etc. |
 | Ranged, Light | 1 | 1d | (Req Ammunition) Shortbow, hand crossbow, slingshot |
 | Ranged, Heavy | 2 | 2d | (Req Ammunition) Longbow, crossbow, pistol |
 | Ranged, V. Heavy | 3 | 3d | (Req Ammunition) Arbalest, Rifle |
 
 Roll or choose Luck times below:
-| d66 Gear | 1 | 2 | 3 | 4 | 5 | 6 |
-|---|---|---|---|---|---|---|
-| 1 | Musk (1) | Chisel/Drill | Grease | Tongs | Rasp | Pole, 10' |
-| 2 | Trap | Crowbar | Hacksaw | Hooded/Bullseye Lantern (6) | Iron Rations (5) | Tinderbox |
-| 3 | Bedroll | Net | Hammer | Large Sack | Rope, 50' | Glowstone (1) |
-| 4 | Caltrops (1) | Glass Marbles (1) | Salt/Garlic (1) | Lockpicks | Steel Wire | Acid vial (1) |
-| 5 | Chain 10' | Glue | Horn | Manacles | Shovel | Poison vial (1) |
-| 6 | Chalk | Grappling Hook | Wooden/Iron spikes | Medicine (3) | Mirror, steel | Strong wine (3) |
+| d66 Gear | 1 | 2 | 3 | 4 | 5 | 6 | Or Else |
+|---|---|---|---|---|---|---|---|
+| 1 (Tools) | Chisel/Drill | Hacksaw | Hammer | Shovel | Rasp/File | Crowbar | Penknife |
+| 2 (Camp Gear) | Bedroll | Tent | Cookpot | Iron Rations (5) | Tinderbox | Fishing Net | Soft Rations (3) |
+| 3 (Cave Gear) | Pole, 10' | Chain, 10' | Pitons | Rope, 50' | Lantern+Oil (6) | Glowstone | Torches (3) |
+| 4 (Thief Kit) | Caltrops | Glass Marbles | Lockpicks | Steel Wire | Manacles | Trap | Large Sack |
+| 5 (Finery) | Musk | Pot Grease/Oil | Strong wine | Ink+Pen | Glue | Mirror, steel | Dice |
+| 6 (Specialty) | Belladonna | Medicine (3) | Poison (1) | Acid | Mercury | Sulfur | Garlic/Salt | 
 
-After everything:
-* If you don't have any light sources, you may take "torches (3)".
-* If you don't have any food, you may take "soft rations (3)".
-* If you don't have any weapons, you can take one of: dagger, club, whip, staff, darts (3), or sling (& stones 3).
-* You are flat broke.
+Afterwards you may choose to take the "or else" from any line in which you didn't get a result already.
 
 Go adventure!
 
-## Uses & breakage
-Consumable items come in bundles of (usually) 3; sometimes 1 for bulkier items, sometimes more for finer items.
-Mark a use of a consumable item like a potion or a flask of oil when you consume the whole thing.
-Permanent items have 3 Uses if not otherwise state before they break.
-For other items:
-* Test ammunition at most once each fight when the DM asks: test luck, marking 1 use on 0 successes.
-* Mark weapons and armor when you take injuries
-
-When you mark the last use of a permanent weapon, test if it's destroyed, just like an injury using the listed durability instead of luck.
-
-| Material | Durability |
-|---|---|
-| Cloth, paper, rope | -1 |
-| Leather | 0 |
-| Bone, wood | 1 |
-| Clay, stone | 2 |
-| Bronze | 3 |
-| Iron, Steel | 4 |
-
-Repair items at 10% of their cost per Use.
-
 # Combat
 
-* Melee: roll STR + weapon dice vs STR + armor dice + shield dice.
-* Missile: roll INT + weapon dice vs REFL + armor dice + shield dice.
+* Melee: roll melee dice + weapon dice vs opponent melee dice + armor dice + shield dice, count hits
+* Missile: roll ranged dice + weapon dice vs opponent dodge dice + armor dice + shield dice, count hits
+* Combat Feat: The attacker proposes a combat trick. Before rolling, the defender chooses that the attacker succeed, or to take the damage the attack would otherwise do. DM should announce DC for maneuver plausibility.
+* Blasts: roll effect's blast dice vs opponent dodge dice + reflex in dice + armor dice + shield dice, count hits
+* Petrification Gazes: roll gaze dice vs opponent magic defense + STR dice. On 0hp, petrified.
+* Difficult terrain: roll 1d vs opponent STR dice. On hits, -25% speed.
+* Pits: roll surprise (1d? 3d?) vs opponent REFL dice. On hit, falling!
+* Falls: Roll 1d per 10' unopposed. Ouch.
+* On Fire: roll 1d each turn (vs Refl if stop/drop/roll, advantage with aid). On each crit, increase fire by 1; on all miss, fire out.
+* Poisoned: roll 1d each turn vs Con; poison deals hits in dice next turn; ends after 2 turns at 0d.
+* Lava: Dead no save.
 
-If someone is unawares, they can't use their STR, REFL, or shield.
+Describe a hit with relish, then cancel it with HD:
+> Dave describes how Alice gores Bob with her lance -- she'd scored an impressive 3 hits.
+> But Bob still has HD left, and so he describes avoiding the blow at the last second.
+> If he'd spent armor uses, he might describe it as glancing off a shield or armor.
+Otherwise, we're looking at an Injury.
 
 ## Injury
-Every hit of damage takes away a HD or, if there are none left, makes a roll on the Injury table.
-Roll 1d per remaining hit +1d per previous roll on the table today vs LUCK + 1d if helmet (or chain or better)
+Roll 1d per hit taken +1d per previous roll on the table today vs LUCK + armor block
 
 | Injury Hits | Result |
 |---|---|
 | 0 | Momentary stun |
-| 1 | & take incoming damage as slots of injury |
+| 1 | & 1 Injury: -1d attack & -1b saves & -25% move |
 | 2 | & knocked out |
 | 3 | & dying |
 | 4 | & dead |
 | 5+ | & flagrantly dead |
 
-You can mark armor uses to reduce this scale of injury 1:1.
-
 Slots of injury are just like any other readied item.
 They go away with medical attention and time, at least 1 month.
 
-## Encumbrance & movement
-Every 250 coins counts as 1 slot.
+# Magic
 
-| Armor + un-readied items | Penalty (swim, sneak, etc) | Speed |
+During character generation, instead of choosing to roll for Armor you can choose to roll for slots of Relics.
+Similarly, instead of Weapons, you can choose to begin with slots of Tricks.
+Even if you trade initial Weapons for Tricks, you can still begin with a Simple, Crude, or Thrown weapon.
+
+## Relics & Spells
+
+Each Relic is a physical object that holds spells: a piece of a saint, a blessed amulet, a spell scroll, a magic wand, etc.
+Some Relics could even be weapons, armor, etc -- but not for your starting adventurer.
+Starting Relics contain 1 Spell (with 1 Use).
+To cast the spell, test the Spell's Complexity against Will (or sometimes Intellect).
+Spend MD for each Hit, or else roll for the spell's Miscast (this usually involves at least ticking its use).
+
+| d6 | Relic | Spell School | Notes |
+|---|---|---|---|
+| 1 | Wand | Evocation | Blasts, gouts, beams, conjurations, etc. Complexity 2d6 take higher value; other die element 1: mist, 2: wind, 3: fire, 4: lightning, 5: ice, 6: stone. Miscast Fallout. |
+| 2 | Icon | Intercession | Subtle spells of enhancement and encouragement. Complexity 2d6 take lower value; other die method 1: cursing 2: divining 3: enhancing 4: protection 5: smiting 6: health. Miscast Karmic. |
+| 3 | Scroll | Summoning | Conjured servants, far travel. 1d6 Power 1: undead 2: demon 3: alien 4: fey 5: elemental 6: construct; 1d6 complexity. Miscast Fallout or Karmic (by Power). |
+| 4 | Stone | Phantasm | Seeming, mentalism, and misdirection. Complexity 2d6 take lower; other die method 1: hallucination 2: confusion 3: love 4: dreams 5: fear 6: mundanity. Karmic. |
+| 5 | Mask | Viridity | Geomantic, beast- and plant- related; transformation. Complexity 1d6; Association 1d6 1: forests 2: mountains 3: swamps 4: plains 5: oceans 6: skies. Miscast Fallout. |
+| 6 | Bell | Artifice | Spells of crafting, metamagic, ritual. Complexity 1d6; effects very varied. Miscast Karmic. |
+
+Some standby adventuring spells:
+* Flute of Hypnosis (Complexity 1): Test while playing at +1 complexity each round for as long as you dare. Creatures hearing the sound test (#rounds played)d vs Will; more hits than HD knocked out into slumber. If critted, suggestible while asleep & sleepwalk.
+* Chime of Opening (Complexity 2): all doors, latches, etc spring open to the sound.
+* Augurs Dice (Complexity 2): 1d DC 2; on hit, Weal, Woe, or Uncertain to a question about the next hour. +1DC per cast within that hour.
+* Wand of fireballs (Complexity 3): 6d to all in 20' radius within a bowshot; sets fire.
+* Wand of Lightningbolts (Complexity 4): 8d to all in 60' line within a bowshot; sets fire.
+* Rod of Cold (Complexity 5): 10d to all in a 120' cone. Freezes ice solid.
+* Mask of Wolfseyes (Complexity 4): Your gaze deals 8d and on 0hd, transforms into a prey animal.
+
+Others might include the effects of a trick, available as a Relic.
+
+| (hits)d - Will + miscasts | Karmic | Fallout |
 |---|---|---|
-| 0-1 | n/a | 12"/rd |
-| 2-3 | disadvantage | 9"/rd |
-| 4-6 | 2x disadvantage | 6"/rd |
-| 7+ | autofail | stagger a few steps |
-
-# Magic Things
-
-There are several interlocking systems:
-* Tricks are things like potions, oils, bombs, drugs, spell-scrolls, etc. They allow a one-time effect when used correctly.
-  * Spells are special tricks that are more powerful than equivalent tricks, but require difficult Casting before use.
-* Instruments are things like fire wands, a ray gun, a spell book, or a holy relic. They are durable items which consume their own uses over time.
-
-## Instruments
-If you selected instruments at character generation, your luck roll determined the tier of instrument you begin with.
-It takes up 1 or 2 slots and gives +1d or +2d to Cast.
-Its tier is also its number of Uses.
-
-| Luck roll/Tier | Example |
-|---|---|
-| 0 | Wooden symbol, simple yew wand, drum |
-| 1 | Silver symbol, athame, amulet, clay flute |
-| 2 | Live wood staff, lute, saint's hair |
-| 3 | silver flute, orb, tome |
-| 4 | magic wand, saint's bone |
-| 5 | Enchanted staff, holy crown |
-
-...which has an affinity with...
-
-| Roll | School |
-|---|---|
-| 1 | Consecration: Subtle magics of detection, protection, healing, and fate |
-| 2 | Evocation: Powerful magics that manipulate elemental concepts like 'fire' and 'iron' |
-| 3 | Viridity: Spiritual and natural powers relating to plants, animals, life, and nature |
-| 4 | Phantasm: Illusion, emotion, psychic and shadow manipulation |
-| 5 | Diabolism: Necromancy, consorting with devils, summoning creatures, madness |
-| 6 | Artifice: Scientific & meta-magics; alchemy, enchantment |
-
-> Alice got a lucky 3 hits on her luck check, scoring a 1 slot mineral orb with 3 uses, and spells of consecration.
+| 0 | Tick Use | Tick Use |
+| 1+ | & -(hits)d forward until you take damage | & take (hits)d feedback |
 
 ## Tricks
 
-These include spells, potions, oils, etc.
-They're effectively single use.
-Wizards can use their MD to purchase spells during the adventure as needed via their Instruments.
+Each Trick is a one-time consumable item like a potion, oil, poison, bomb, dust, drug, or similar.
+Theoretically once used it's gone.
+Practically, you've got a source for _these_ Tricks you pick up during character generation, and can restock in some way that makes sense for your background.
+But a trick you pick up during an adventure is more likely one-and-done.
+You can always use downtime projects to try to arrange a more continuous supply.
+
+Smoke Bomb: 
+Bomb (1): 6d
+
 
 ### Tier 0
 * Lightspell: Cast light as a torch.
