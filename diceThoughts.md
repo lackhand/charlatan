@@ -38,28 +38,10 @@ Some rolls don't allow crits, and will say so. Then it's just a normal hit.
 
 ## Weird pool sizes
 
-When the pool size is...
+When the pool is smaller than 1 die, roll 2 (or 3, 4, etc) dice and keep only the lowest (so 0d is the worst of 2 dice, -1d worst of 3, etc).
+When the pool is larger than 8 dice (lucky you), assume sets of 6 roll `[1, 2, 3, 4, 5, 6]`.
 
-| #d | #b | You will... |
-|---|---|---|
-| ... | ... | ... |
-| -2 | 4 | Roll 4 dice and keep the lowest one. |
-| -1 | 3 | Roll 3 dice and keep the lowest one. |
-| 0 | 2 | Roll 2 dice and keep the lowest one. |
-| 1 | 1 | Roll 1 die. Count it if it hits or crits. |
-| 2 | 0 | Roll 2 dice. Count any that hit or crit. |
-| 3 | -1 | Roll 3 dice. Count any that hit or crit. |
-| 4 | -2 | Roll 4 dice. Count any that hit or crit. |
-| ... | ... | ... |
-| 7 | -5 | Roll 7 dice. Count any that hit or crit. |
-| 8 | -6 | Roll 2 dice. Assume the other 6 were `[1, 2, 3, 4, 5, 6]` (which includes at least one crit). |
-| 9 | -7 | Roll 3 dice. Assume the other 6 were `[1, 2, 3, 4, 5, 6]` (which includes at least one crit). |
-| ... | ... | ... |
-| 13 | -11 | Roll 7 dice. Assume the other 6 were `[1, 2, 3, 4, 5, 6]` (which includes at least one crit). |
-| 14 | -12 | Roll 2 dice. Assume the other 12 were `[1,1, 2,2, 3,3, 4,4, 5,5, 6,6]` (which includes at least two crits). |
-| ... | ... | ... |
-
-## Players roll all of the dice.
+## Players roll all of the dice
 
 * When a player rolls to deal damage, it's a "damage" or "dmg" roll.
   > Bob tries to stab Alizard Mann, so he rolls a pool of dice for damage he could deal.
@@ -71,6 +53,22 @@ When the pool size is...
   > Bob tries to pick a lock, trying to rack up a number of successes during this opportune moment.
 * Sometimes anyone (including the DM) just rolls dice to randomize what happens next like on a table.
   That's different.
+
+## Sometimes the "damage" is metaphorical
+
+> Alice searches the room.
+> She rolls 1d against DC 6, hoping for a hit; either way, some time passes.
+> And if she were a Dwarf (or an Architect) or otherwise secret-door-wise, she might have advantage and thus DC 5.
+> It's perfectly acceptable for everyone to roll in cases like these.
+> And the same example might work searching your own mind-palace to recall a fact.
+
+> Bob climbs the cliff in the dark and rain, with plentiful handholds.
+> It all cancels out to 1d against DC 4; on a miss, he's facing the 10d fall.
+
+> Carol faces The Locked Door.
+> She could attempt to batter or hack it down (melee damage) -- probably 2d or 3d or so, against the door's obstinate HD.
+> She could attempt to pick it (skill check) -- 2d for the picks, against the lock's lower-but-harder-to-attack HD (or 0d without picks, or maybe a one-time 3d for a vial of metal-eating acid).
+> She could attack the hinges with a tool, another version of 2d (with penalty dice against battery!).
 
 # Character Statistics
 
@@ -103,81 +101,135 @@ Nothing else in the world has (or needs) a level; it's just so that we can give 
 
 ## The Attributes
 
-Player characters have six attributes which measure their capability in broad swathes; humans tend to be in the range 0-4 but could go beyond that range:
+Attributes in this game impact your defenses and your skills, but never an attack.
 
-* **STRength:** Resist paralysis, obstacles, impediments, or melee blows; power through.
-* **REFLex:** Resist missiles, blasts, surprises, and detection; evade or become aware.
-* **INTellect:** Resist confusion, distraction or hesitation; know how to do something & do it.
-* **WILL:** Resist fear, compulsion, magical or social attacks; convince or resist.
-* **CONstitution:** Resist poison, fatigue, transformation, and death; Carry more & carry on.
-* **LUCK:** Begin with better gear and social standing; resist terrible fates.
+Player characters have five attributes which measure their capability in broad swathes; humans tend to be in the range 0-4 but could go beyond that range. NPCs use a simpler set of 3.
 
-> NPC attributes are a little bit simpler than player character's attributes, but otherwise work the same way.
-> * **FORTitude:** A monster's Strength and Constitution. Small things can't use the fort they have as well as big things.
-> * **INSTinct:** A monster's Reflex and Intellect. Animal intelligences can't use the inst they have as well as complex intelligences.
-> * **WILL:** The monster's Will (& luck in a pinch).
+| Innate Attribute | Save Vs | Skills | NPC Attribute |
+|---|---|---|---|
+| **STRength** | Melee, paralysis, obstacles, entanglement | Climb, swim, jump, lift, force, throw | Fortitude |
+| **REFLex** | Missiles, blasts, surprise, detection, inaction | Sneak, intuit, trail, balance | Instinct |
+| **CONstitution** | Poison, deprivation, transformation, injury, death | Carry | Fortitude | 
+| **INTellect** | Confusion, distraction, error | Tinker, prepare, know how, remember, operate | Instinct |
+| **WILL** | Suasion, morale, disloyalty, reactions | Sway, inspire, channel | Will |
 
-Roll 3d DC 4 (no crits) for each of str, refl, int, will, & con (but not luck!) in order, then switch 2 (if you want).
-* Start your luck at 0.
-* For every other attribute equal to 0, increase your luck by 1.
-* For every other attribute equal to 1, increase your luck by 1/2.
-* For every other attribute equal to 2, increase your luck by 1/3.
-* Round down.
+Roll 3d vs DC 4 (no crits) for each innate attribute in order, then switch 2 (if you want).
 
 > Rolling an attribute: When you're told to "roll strength", add to the pool 1d per point of strength.
 > When you're told to "reflex save", add 1b per point of reflex.
 > And so on.
 > By default, you're counting hits of damage; by default, that's against DC 4.
 
+> Monsters have one stat each for Size (use for Str or Con), Speed (use for Refl and some kinds of Int), and Mind (Will & other Int).
+
+Your character can have other non-innate attributes which you don't roll, but instead derive in some other way, for instance Armor (based on what you wear), Melee, Ranged Attack, Saving Throws, Casting, Skill, (each of which come from tier benefits), etc.
+All of them start at 0d.
+Player characters don't add their innate attributes to their damage.
+
+| Danger | Attack (dice) | Defense (block) |
+|---|---|---|
+| Melee weapon | Weapon dice + Melee dice | (Armor dice or Strength) + Melee dice + Shield dice |
+| Missile weapon | Weapon dice + Ranged Attack dice | (Armor dice or Reflex) + Ranged Defense dice + Shield dice |
+| Bombs, fireballs, dragonbreath, etc | per-Effect dice + (Magic Attack dice or etc) | (Armor dice or Reflex) + Saving Throw dice + Shield dice |
+| Swimming, climbing, move through thicket, etc | (obstacle dice: 1d, 3d, etc) | Strength dice + Saving Throw dice, each hit costs movement (or maybe is damage, etc) |
+| Spell channeling | (Spell Complexity dice) | Will + Magic Cast dice |
+| Surprise&Initiative | Single best opposing Reflex dice + Skill dice | Reflex dice + Saving Throw dice; hits determine phase, phase 0, phase 1, etc; side initiative for all phases |
+| Morale break | Start of round at 0d +1d each round | Will + Saving Throw dice; only HD damage possible |
+| Spark/Torch/Flaming oil | 0d/1d/2d + (Magic Attack dice or etc) | Refl + Saving Throw dice; on hit catch fire at number of hits, each round attacked by fire again at number of hits on previous round, going out after 0d misses |
+| Poison | 1d (or more) | Con + Saving Throw dice; on any hit increase poison by 1, on all miss decrease poison by 1, cure after 0d misses |
+
+## The Defenses
+
+This game uses 3 pools of resources to absorb (or add) hits.
+
+The player can spend these after the roll 1:1 to set a die in the pool to any face.
+
+| Innate Pool | Use when... | Restored when... |
+|---|---|---|
+| **H**it **D**efense | Physically taking damage (such as with a weapon, suffering a fall, hit by a fireball, etc); fueling extra power, speed, or grit | A good night's sleep |
+| **M**ana **D**efense | Add, avoid or erase errors of skill, knowledge, perception, understanding or manipulation | A good night's sleep |
+| **K**arma **D**defense | Any roll | Your character is true to their Titles and entertains the DM; when you gain a level |
+
+HD and MD come back through rest; roll 1d per point lost restoring each hit (DC 5 while camping, DC 2 at a hospital, etc).
+KD are directly awarded by the DM for skillful play that lives up to your character's essential being.
+
+Your initial HD and MD pools are 0.
+Your KD pool is 0 modified as follows:
+* +1 per innate attribute at 0
+* +1/2 per innate attribute at 1
+* +1/3 per innate attribute at 2
+* Round down
+
+> Effects on miss: When you spend HD or MD to erase a hit, you lessen but do not fully erase the hit: you twist out of the way at the last second, etc.
+> If the attack had an on-hit rider (like "on hit: be set on fire 1d"), you're still set on fire, even if you reduce the hits to 0.
+
 ## Titles
 
-Select a **Background Title** based on your **highest attribute** (if several are tied, you can choose one) and your **luck score**:
+Select a **Background Title** based on your **highest attribute** (if several are tied, you can choose one) and your **KD**:
 
 | ... | 0 | 1 | 2 | 3 | 4+ |
 |---|---|---|---|---|---|
 | Strength (Warrior) | Barbarian | Gladiator | Guard/Soldier | Squire | Knight |
 | Reflex (Hunter) | Ratcatcher | Thief | Scout/Outlaw | Ranger | Spy | 
-| Health (Laborer) | Scullion | Farmer/Shepherd | Cook/Poisoner | Sailor | Merchant |
-| Intelligence (Expert) | Tinker/Tailor | Artisan | Architect/Engineer | Herbalist | Alchemist |
-| Will (Adept) | Hermit/Monk | Nursemaid/Nun | Sorcerer | Witch | Priest |
-| Luck (Noble) | Beggar | Traveler | Scribe | Entertainer | Prince |
+| Health (Laborer) | Scullion | Farmer/Shepherd | Cook/Barber | Sailor | Merchant |
+| Intelligence (Expert) | Tinker/Tailor | Artisan | Architect/Engineer | Herbalist/Poisoner | Alchemist/Doctor |
+| Will (Adept) | Hermit/Monk | Nursemaid/Nun | Sorcerer | Scholar | Priest/Witch |
+| Luck (Noble) | Beggar | Dancer | Bard | Traveler | Prince |
 
-Your DM might tell you to pick other titles for your **nationality**, **race**, **religion**, **appearance**, **alignment**, etc (whatever might come up in your game).
-> Alice's character has a high reflex and middling luck, so she was a _scout_. She decides her character is English (and human), a stout & ruddy Protestant Kingswoman of Leeds.
-> Bob's character has a high will and low luck, and so he was a _herald_. He decides his character is a pagan faerie Envoy from the Thistledowns, armed in fish-scales and here to ensure the Pretender claims the throne of Wales.
-> Carol is always a Dwarf, and in this game she chooses no differently: she's wound up with a Dwarven Cook -- and she'll figure out the rest as she goes.
+Your DM might tell you to pick other titles within categories that they think would be interesting for this campaign:
+* **Bonds** that describe relationships to each other, a patron, an organization, etc. For instance:
+  * With whom 1d...: 1-3: A patron or organization, 4-5: The player to your right, 6: The player to your left
+  * ...Of nature 1d: 1-3: Debt, 4-5: Pact or Amity, 6: Kin or History
+* **Ideals** that describe drives, alignments, creeds, etc. For instance:
+  * Alignment: 1-3: Neutrality, 4-5: Chaos, 6: Law
+  * Creed: 1-2: Church (High, Green, 
+* **Traits** that describe species, race, culture, etc.
+  * **Quirks** that make your character more fun, like flaws, appearance, old injuries, behaviors, etc.
+
+> Alice's character has a high reflex and middling luck, so she was a _scout_. She decides her character is English (and human), a stout & pockmarked Protestant Kingswoman of Leeds.
+> Bob's character has a high will and low luck, and so he was a _herald_. He decides his character is a pagan faerie Envoy from the Thistledowns, with fish-scale skin and here to ensure the Pretender claims the throne of Wales.
+> Carol is always a red-haired dwarf, and in this game she chooses no differently: she's wound up with a Dwarven Cook -- and she'll figure out the rest as she goes.
+
+> **BUT I WANT TO BREATHE FIRE**
+> Perhaps you want to portray a (baby) dragon, a (fallen) angel, adventuring dryad, or other monstrous or inhuman creature.
+> Sometimes this is just a trait -- a "goblin scullion" or "dwarven 
+
 
 When a title is relevant, the DM might give _advantage_ or _disadvantage_, adjusting the DC (especially for skill or project rolls).
 Don't worry, you'll acquire more titles as the game goes on.
 
-## Derived statistics & leveling
-At every tier (including your first), a character gets 1 **T**ier **P**oint to spend in-game.
-Each session, you can try to spend any unspent Tier Point(s) once; if you fail the opportunity, you have to wait until the next session to try again.
-* +1 to **one stat**: While testing that stat, roll 1d vs a DC of the stat's current value. If you match or beat, increase the stat by 1 now and forever.
-* +1 to **melee**: While rolling a melee attack or defense, roll 1d vs a DC of your number of melee dice. If you match or beat, increase your melee dice by 1 now and forever (starts at 0d).
-* +1 to **ranged attacks**: While rolling an attack with any kind of ranged weapon (thrown, seige, etc)... otherwise as **melee**.
-* +1 to **dodging**: While rolling a defense against a physical threat... (vs ranged, melee, blasts...)
-* +1 to **magic skill**: When saving to activate a spell or device...
-* +1 to **magic power**: When rolling spell damage (or other impact)...
-* +1 to **magic defense**: When saving against a spell or power's effects...
-* +1 to **skill**: While rolling a skill check... (vs _all_ skill and project checks!)
+## Level Up
 
-These pools of dice make you better at default adventurer checks -- attacks, defenses, magical casting or skill checks -- forever.
-> Alice has +1 melee dice. She gets +1d to attacks with melee weapons, and +1b to defenses against melee weapons.
-> She also then picks up +1b to dodging. She has a total of +2b to dodge melee weapons, on top of her shield, armor, or agility (if any).
-
-**L**evel **P**oints work the same way as TP, but more frequently.
-* +1 to **H**it **D**efence: When you would take damage at 0 HD, roll 1d vs a DC of your current max HD. If you match or beat, increase your max and current by 1 now and forever.
-* +1 to **M**ana **D**efence: As HD, but for absorbing hits on a spellcasting check. This lets you convert spellcasting save hits into misses.
-* +1 to **S**kill **D**efence: As HD, but for skill checks or projects. This lets you convert hits into misses.
-* Invest Item: When you would mark use: Roll 1d vs DC of item max uses; if you match or beat, increase remaining & max uses by 1 now and forever, and give it a Title.
-* New Feat: When you accomplish a feat, spend a LP to mark the occasion and take a title.
-
-Whenever you sleep, you get back all of your HD, MD, and SD.
+All attribute improvement works the same way: roll 1d vs a DC of the attribute's current value.
+If the attribute is already 7 or higher, use a DC of 6 but require 1 additional hit per point above 6 (which itself requires a crit).
+On a hit, improve the attribute by 1 point (before resolving whatever situation called for the improvement!).
+If the roll fails, the opportunity for advancement is lost.
+Generally, the DM should allow only one opportunity for advancement per character per session.
 
 ### Level Up
-You level when you spend 1000 sp per current level & spend 1 week per current level training with a tutor of at least 2 levels above current level.
-You can supplement this number with xp from monsters slain, at 10xp per HD, and freeform xp (no fixed schedule).
+Gain a new level when you spend 1000 sp per current level & 1 week per current level training with a tutor.
+The DM can waive any percentage of this fee or time for any reason (story awards, tutor with cheaper rates, demonic pacts, etc).
+
+A character can spend their Level Up on one of:
+* HD: As attribute improvement
+* MD: As attribute improvement
+* KD: As attribute improvement
+* an Item's Uses: As attriute improvement
+* Claim a Feat Title: No roll; commemorate a moment of awesome or something we learn about your character.
+
+### Tier Improvements
+A level 1 character is entitled to an improvement at each of level 1, 2, 4, 7, 11, 17, 22, etc.
+
+| Tier Improvement | Situation |
+|---|---|
+| one **innate stat** | Rolling a skill or save with that stat (athletics for Str, tinkering for Int, etc) |
+| **evasion** | Avoiding melee, missile, blast attacks |
+| **melee** | Attacking or defending in melee, including unarmed |
+| **missiles** | Damage from an aimed non-melee attack (such as a bow, dart, magic wand, thrown oil, etc) |
+| **blasts** | Creating a damaging effect or area (such as casting or triggering a _fireball_ spell, setting a bomb or flaming oil, splashing holy water, caltrops, etc) |
+| **casts** | Resist the channeling complexity of a spell |
+| **skills** | Avoid detection and surprise, make progress on projects, careful or skillful errors, etc |
+| **saves** | Resist poisons, non-evasion spells, pit traps, etc |
 
 # Inventory
 You may carry Ready (equipped, on your body or in your hands) 6 + CON items in slots.
